@@ -33,6 +33,9 @@ get_template_part('template-parts/page-banner');
                                     $position = get_post_meta(get_the_ID(), 'team_position', true);
                                     $member_image = get_the_post_thumbnail_url(get_the_ID(), 'large');
                                     if (empty($member_image)) {
+                                        $member_image = get_post_meta(get_the_ID(), 'team_headshot', true);
+                                    }
+                                    if (empty($member_image)) {
                                         $member_image = get_theme_mod('zelligcare_default_banner', 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/ib.jpg');
                                     }
                                     ?>

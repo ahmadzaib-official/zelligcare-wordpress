@@ -9,14 +9,11 @@ get_header();
 $position = get_post_meta(get_the_ID(), 'team_position', true);
 $credentials = get_post_meta(get_the_ID(), 'team_credentials', true);
 
-// Fallback images based on team member slug
-$team_images = array(
-    'kaye' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/kaye_headshot.png',
-    'sade-savage' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/sade_headshot.png',
-    'sade' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/sade_headshot.png',
-);
-$slug = get_post_field('post_name', get_the_ID());
-$default_image = isset($team_images[$slug]) ? $team_images[$slug] : $team_images['kaye'];
+// Fallback headshot from meta field
+$default_image = get_post_meta(get_the_ID(), 'team_headshot', true);
+if (empty($default_image)) {
+    $default_image = get_theme_mod('zelligcare_default_banner', 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/ib.jpg');
+}
 ?>
 
 <div id="ry-pg-banner">
