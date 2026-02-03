@@ -1,0 +1,241 @@
+/**
+ * Feedback Page Styles
+ * Custom styles for the Feedback page
+ */
+
+/* Page Banner Styles */
+#ry-pg-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ry-pg-banner .ry-bnr-wrp {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#ry-pg-banner .ry-bnr-wrp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ry-pg-banner .ry-pg-title {
+    visibility: visible;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#ry-pg-banner .ry-pg-title h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400 !important;
+    letter-spacing: initial;
+    font-family: 'Tenor Sans', sans-serif !important;
+    line-height: 1;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-transform: uppercase;
+}
+
+/* Feedback Form Styles */
+.ry-form-box {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.ry-form-box h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+}
+
+.ry-form-box p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #666;
+    font-family: 'Jost', sans-serif;
+    line-height: 1.6;
+}
+
+.cmsForm .form-group {
+    margin-bottom: 20px;
+}
+
+.cmsForm .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    font-family: 'Jost', sans-serif;
+    height: 60px;
+    color: #333;
+}
+
+.cmsForm .form-control:focus {
+    outline: none;
+    border-color: #b08d57;
+    box-shadow: none;
+}
+
+.cmsForm input[type="email"].form-control,
+.cmsForm input[type="text"].form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd !important;
+    border-radius: 0 !important;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    height: 60px !important;
+    color: #333 !important;
+}
+
+.cmsForm input[type="email"].form-control:focus,
+.cmsForm input[type="text"].form-control:focus {
+    outline: none;
+    border-color: #b08d57 !important;
+    box-shadow: none;
+}
+
+.cmsForm input[type="email"].form-control::-webkit-input-placeholder,
+.cmsForm input[type="text"].form-control::-webkit-input-placeholder {
+    color: #cecece !important;
+}
+
+.cmsForm input[type="email"].form-control:-ms-input-placeholder,
+.cmsForm input[type="text"].form-control:-ms-input-placeholder {
+    color: #cecece !important;
+}
+
+.cmsForm input[type="email"].form-control::-ms-input-placeholder,
+.cmsForm input[type="text"].form-control::-ms-input-placeholder {
+    color: #cecece !important;
+}
+
+.cmsForm input[type="email"].form-control::placeholder,
+.cmsForm input[type="text"].form-control::placeholder {
+    color: #cecece !important;
+}
+
+.cmsForm input[type="email"].form-control:invalid:not(:placeholder-shown) {
+    border-color: #dc3545 !important;
+}
+
+.cmsForm input[type="email"].form-control:valid:not(:placeholder-shown) {
+    border-color: #28a745 !important;
+}
+
+.cmsForm textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+    height: auto !important;
+    padding: 12px 15px;
+    border: 1px solid #ddd !important;
+    border-radius: 0 !important;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    color: #333 !important;
+}
+
+.cmsForm textarea.form-control:focus {
+    outline: none;
+    border-color: #b08d57 !important;
+    box-shadow: none;
+}
+
+.cmsForm textarea.form-control::-webkit-input-placeholder {
+    color: #cecece !important;
+}
+
+.cmsForm textarea.form-control:-ms-input-placeholder {
+    color: #cecece !important;
+}
+
+.cmsForm textarea.form-control::-ms-input-placeholder {
+    color: #cecece !important;
+}
+
+.cmsForm textarea.form-control::placeholder {
+    color: #cecece !important;
+}
+
+.ry-margin-btm-30 {
+    margin-bottom: 30px;
+}
+
+.ry-btn-primary {
+    background: #b08d57;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Jost', sans-serif;
+}
+
+.ry-btn-primary:hover {
+    background: #8a6d44;
+}
+
+.alert {
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Sidebar Styles */
+#ry-sidebar .ry-sb-main {
+    margin-bottom: 30px;
+}
+
+#ry-sidebar .search-bar-widget {
+    margin-bottom: 20px;
+}
+
+#ry-sidebar .ry-cta-wrp {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 40px;
+    }
+    
+    .ry-form-box {
+        padding: 20px;
+    }
+    
+    .ry-form-box h3 {
+        font-size: 24px;
+    }
+}

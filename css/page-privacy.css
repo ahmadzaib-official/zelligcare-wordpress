@@ -1,0 +1,108 @@
+/**
+ * Privacy Policy Page Styles
+ * Custom styles for the Privacy Policy page
+ */
+
+/* Page Banner Styles */
+#ry-pg-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ry-pg-banner .ry-bnr-wrp {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#ry-pg-banner .ry-bnr-wrp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ry-pg-banner .ry-pg-title {
+    visibility: visible;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#ry-pg-banner .ry-pg-title h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400 !important;
+    letter-spacing: initial;
+    font-family: 'Tenor Sans', sans-serif !important;
+    line-height: 1;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-transform: uppercase;
+}
+
+/* Privacy Policy Content */
+#ry-pg-body {
+    padding: 60px 0;
+}
+
+#ry-pg-body h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#ry-pg-body h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #b08d57;
+}
+
+#ry-pg-body p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#ry-pg-body ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#ry-pg-body ul li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#ry-pg-body ul li p {
+    margin-bottom: 10px;
+}
+
+#ry-pg-body a {
+    color: #b08d57;
+    text-decoration: underline;
+}
+
+#ry-pg-body a:hover {
+    color: #8a6d44;
+}
+
+@media (max-width: 768px) {
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 40px;
+    }
+    
+    #ry-pg-body {
+        padding: 40px 0;
+    }
+}

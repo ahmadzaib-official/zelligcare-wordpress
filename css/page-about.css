@@ -1,0 +1,187 @@
+/**
+ * Our Practice (About) Page Styles
+ * Custom styles for the About/Our Practice page
+ */
+
+/* Page Banner Styles */
+#ry-pg-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ry-pg-banner .ry-bnr-wrp {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#ry-pg-banner .ry-bnr-wrp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Title is now a sibling of ry-bnr-wrp, not inside it */
+#ry-pg-banner .ry-pg-title {
+    visibility: visible;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#ry-pg-banner .ry-pg-title h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400 !important;
+    letter-spacing: initial;
+    font-family: 'Tenor Sans', sans-serif !important;
+    line-height: 1;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 40px;
+    }
+    
+    #ry-pg-banner .ry-bnr-wrp {
+        height: 300px;
+    }
+}
+
+/* Page Content Styles */
+#ry-pg-content {
+    padding: 60px 0;
+    background: #fff;
+    display: block;
+    visibility: visible;
+}
+
+#ry-pg-body {
+    display: block;
+    visibility: visible;
+}
+
+#ry-pg-body .ry-content {
+    display: block;
+    visibility: visible;
+}
+
+#ry-pg-body .ry-content.ry-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#ry-pg-body .col-lg-12 {
+    display: block;
+    visibility: visible;
+}
+
+#ry-pg-body .col-lg-12 > div {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 100px;
+}
+
+#ry-pg-body .col-lg-12 > div p {
+    margin-bottom: 25px;
+    opacity: 0.85;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+#ry-pg-body .col-lg-12 > div p:first-child {
+    font-size: 22px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+#ry-pg-body .col-lg-12 > div h2,
+#ry-pg-body .col-lg-12 > div h3 {
+    color: #b08d57;
+    font-family: 'Cinzel', serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#ry-pg-body .col-lg-12 > div h2 {
+    font-size: 36px;
+}
+
+#ry-pg-body .col-lg-12 > div h3 {
+    font-size: 28px;
+}
+
+#ry-pg-body .col-lg-12 > div ul,
+#ry-pg-body .col-lg-12 > div ol {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+#ry-pg-body .col-lg-12 > div li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+#ry-pg-body .col-lg-12 > div a {
+    color: #b08d57;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+#ry-pg-body .col-lg-12 > div a:hover {
+    color: #8a6d42;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #ry-pg-body .col-lg-12 > div {
+        padding: 0 15px;
+    }
+    
+    #ry-pg-body .col-lg-12 > div p {
+        font-size: 18px;
+    }
+    
+    #ry-pg-body .col-lg-12 > div p:first-child {
+        font-size: 20px;
+    }
+    
+    #ry-pg-body .col-lg-12 > div h2 {
+        font-size: 28px;
+    }
+    
+    #ry-pg-body .col-lg-12 > div h3 {
+        font-size: 24px;
+    }
+    
+    #ry-pg-content {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #ry-pg-body .col-lg-12 > div p {
+        font-size: 16px;
+    }
+    
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 28px;
+    }
+    
+    #ry-pg-banner .ry-bnr-wrp {
+        height: 250px;
+    }
+}

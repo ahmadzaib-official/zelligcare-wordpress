@@ -1,0 +1,258 @@
+/**
+ * Reviews Page Styles
+ * Custom styles for the Reviews page matching review.html exactly
+ */
+
+/* Page Banner Styles */
+#ry-pg-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ry-pg-banner .ry-bnr-wrp {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#ry-pg-banner .ry-bnr-wrp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ry-pg-banner .ry-pg-title {
+    visibility: visible;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#ry-pg-banner .ry-pg-title h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400 !important;
+    letter-spacing: initial;
+    font-family: 'Tenor Sans', sans-serif !important;
+    line-height: 1;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-transform: uppercase;
+}
+
+/* Review Heading Section - Matching original exactly */
+.rev-heading {
+    text-align: center;
+    padding: 60px 0 40px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rev-heading h2 {
+    color: #bd945a !important;
+    /* Override #ry-pg-body h2 color */
+    line-height: 1 !important;
+    /* Match the original line-height */
+    font-size: calc(28px + 2 * ((100vw - 320px) / 1120)) !important;
+    /* Responsive font-size matching #ry-pg-body h2 */
+    font-weight: 400 !important;
+    font-family: 'Jost', sans-serif !important;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.rev-heading p {
+    font-size: 20px !important;
+    font-family: 'Jost', sans-serif !important;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center !important;
+    text-transform: uppercase !important;
+}
+
+/* Button Wrapper - Matching original exactly */
+.button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px 0 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-wrapper.good-button {
+    padding-top: 30px;
+    gap: 2em !important;
+}
+
+/* Review Buttons - Matching original updates-css.css exactly */
+.button-wrapper .ry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    /* 15px top/bottom, 25px left/right - matching original */
+    font-size: 18px !important;
+    font-weight: 400;
+    font-family: 'Jost' !important;
+    /* Matching original updates-css.css line 17 */
+    text-transform: uppercase;
+    letter-spacing: 0;
+    border-radius: 10px !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    height: auto;
+    max-width: max-content;
+    min-width: auto;
+    width: auto;
+    color: #FFFFFF !important;
+    background: #bd945a !important;
+    border: none !important;
+    white-space: nowrap;
+}
+
+.button-wrapper .ry-btn.ry-btn-primary {
+    background: #bd945a !important;
+    color: #FFFFFF !important;
+    border: none !important;
+}
+
+.button-wrapper .ry-btn.ry-btn-primary:hover {
+    background: #184f5a !important;
+    color: #FFFFFF !important;
+}
+
+.button-wrapper .ry-btn.ry-btn-primary:hover svg,
+.button-wrapper .ry-btn.ry-btn-primary:hover svg path {
+    fill: #FFFFFF;
+}
+
+/* First button (Good) - different background when not hovered */
+.button-wrapper.good-button .ry-btn:nth-child(1):not(:hover) {
+    background: #184f5a !important;
+    color: #fff !important;
+}
+
+/* Large button styling for review page - ensure both buttons are same size */
+.button-wrapper.good-button a.ry-btn.ry-btn-primary {
+    width: 47% !important;
+    max-width: 280px !important;
+    min-width: 280px !important;
+    /* Ensure consistent width for both buttons */
+    height: 340px !important;
+    flex-direction: column;
+    gap: 1em 0;
+    font-size: 25px !important;
+    font-weight: 500 !important;
+    font-family: 'Jost' !important;
+    /* Ensure same font family as base - matching updates-css.css line 17 */
+    border-radius: 30px !important;
+    padding: 0 !important;
+    /* Reset padding for column layout */
+    display: flex !important;
+    text-transform: uppercase !important;
+    /* Ensure text transform is applied */
+}
+
+/* SVG Icons in Buttons */
+.button-wrapper .ry-btn svg {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    fill: #FFFFFF;
+    flex-shrink: 0;
+}
+
+.button-wrapper .ry-btn svg path {
+    fill: #FFFFFF;
+}
+
+/* SVG Icons in large column buttons */
+.button-wrapper a.ry-btn.ry-btn-primary svg {
+    width: 150px;
+    height: 150px;
+    margin-right: 0;
+    margin-bottom: 0.5em;
+}
+
+/* Remove default button arrow */
+.button-wrapper .ry-btn::after {
+    display: none !important;
+}
+
+/* Responsive Styles for h2 font-size */
+@media screen and (max-width: 320px) {
+    .rev-heading h2 {
+        font-size: 28px !important;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .rev-heading h2 {
+        font-size: 30px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        text-transform: uppercase !important;
+    }
+
+    #ry-pg-body h2 {
+        font-weight: 600 !important;
+        text-align: center !important;
+        text-transform: uppercase !important;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .rev-heading {
+        padding: 40px 0 30px;
+    }
+
+    .rev-heading p {
+        font-size: 18px !important;
+    }
+
+    .button-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .button-wrapper .ry-btn {
+        width: 100%;
+        max-width: 300px;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 40px;
+    }
+
+    .rev-heading {
+        padding: 40px 0 30px;
+    }
+
+    .rev-heading p {
+        font-size: 16px !important;
+    }
+
+    .button-wrapper .ry-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}

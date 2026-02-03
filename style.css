@@ -1,0 +1,80 @@
+/*
+Theme Name: Zellig Care
+Theme URI: https://zelligcare.com
+Author: Zellig Care Team
+Author URI: https://zelligcare.com
+Description: A WordPress theme for Zellig Care mental health services
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: zelligcare
+*/
+
+/* WordPress theme styles will be added here */
+/* Original styles will be imported below */
+
+/* Global responsive styles */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Insurance Logos Styles */
+.hero-insurance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.hero-insurance-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 50px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 95px; */
+}
+
+.hero-logo-item img {
+    height: 30px !important;
+    width: auto !important;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.hero-logo-item img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* WHAT WE OFFER Section Icon Styling */
+.module-cta.custom .ry-flex .each .icon {
+    width: 80px;
+    height: 80px;
+    background: #b08d57;
+    border-radius: 50% !important;
+    margin: -120px 0 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 5;
+    flex: none !important;
+}

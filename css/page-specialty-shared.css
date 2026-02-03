@@ -1,0 +1,145 @@
+/**
+ * Specialty Pages Shared Styles
+ * Common styles for all specialty condition pages (ADHD, Anxiety, Bipolar, Depression, etc.)
+ */
+
+/* ============================================
+   PAGE BANNER STYLES - Shared across all specialty pages
+   ============================================ */
+
+#ry-pg-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ry-pg-banner .ry-bnr-wrp {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+#ry-pg-banner .ry-bnr-wrp:before {
+    content: "";
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#ry-pg-banner .ry-bnr-wrp:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    z-index: 1;
+}
+
+#ry-pg-banner .ry-bnr-wrp img {
+    display: none;
+}
+
+/* Banner title positioning - title is sibling of ry-bnr-wrp */
+#ry-pg-banner .ry-pg-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    visibility: visible;
+    pointer-events: none;
+}
+
+#ry-pg-banner .ry-pg-title h1 {
+    color: #fff !important;
+    font-size: 60px !important;
+    font-weight: 400 !important;
+    letter-spacing: initial;
+    font-family: 'Tenor Sans', sans-serif !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    text-transform: uppercase;
+    max-width: 70%;
+}
+
+/* ============================================
+   RESPONSIVE BANNER STYLES
+   ============================================ */
+
+@media (max-width: 1600px) {
+    #ry-pg-banner .ry-bnr-wrp {
+        margin-top: -1px;
+    }
+}
+
+@media (max-width: 1599px) {
+    #ry-pg-banner .ry-bnr-wrp {
+        height: 320px;
+        background-position: 100%;
+    }
+}
+
+@media (max-width: 1380px) {
+    #ry-pg-banner .ry-bnr-wrp {
+        height: 300px;
+        background-position: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #ry-pg-banner .ry-bnr-wrp {
+        height: 260px;
+        background-position: 100%;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    #ry-pg-banner .ry-bnr-wrp {
+        height: 300px;
+        margin-top: 50px;
+        background-position: 95%;
+    }
+    
+    #ry-pg-banner .ry-pg-title h1 {
+        text-align: center;
+        font-size: calc(35px + 35 * ((100vw - 500px) / 940));
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    #ry-pg-banner .ry-bnr-wrp {
+        height: 260px;
+        background-position: 95%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #ry-pg-banner .ry-bnr-wrp {
+        height: 200px;
+        background-position: 90%;
+    }
+    
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 35px;
+    }
+}
