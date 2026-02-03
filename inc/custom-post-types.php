@@ -145,6 +145,7 @@ function zelligcare_team_meta_callback($post) {
 
     $position = get_post_meta($post->ID, 'team_position', true);
     $credentials = get_post_meta($post->ID, 'team_credentials', true);
+    $headshot = get_post_meta($post->ID, 'team_headshot', true);
     $display_homepage = get_post_meta($post->ID, 'team_display_homepage', true);
     ?>
     <table class="form-table">
@@ -160,6 +161,17 @@ function zelligcare_team_meta_callback($post) {
             <td>
                 <input type="text" id="team_credentials" name="team_credentials" value="<?php echo esc_attr($credentials); ?>" class="regular-text">
                 <p class="description">e.g., PMHNP-BC, MSN, RN</p>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="team_headshot">Headshot Image URL</label></th>
+            <td>
+                <input type="url" id="team_headshot" name="team_headshot" value="<?php echo esc_url($headshot); ?>" class="regular-text" placeholder="https://...">
+                <button type="button" class="button zelligcare-upload-btn" data-target="team_headshot">Upload Image</button>
+                <p class="description">Used when no Featured Image is set.</p>
+                <?php if ($headshot) : ?>
+                <br><img src="<?php echo esc_url($headshot); ?>" style="max-width: 150px; margin-top: 10px;">
+                <?php endif; ?>
             </td>
         </tr>
         <tr>
@@ -189,6 +201,9 @@ function zelligcare_save_team_meta($post_id) {
     }
     if (isset($_POST['team_credentials'])) {
         update_post_meta($post_id, 'team_credentials', sanitize_text_field($_POST['team_credentials']));
+    }
+    if (isset($_POST['team_headshot'])) {
+        update_post_meta($post_id, 'team_headshot', esc_url_raw($_POST['team_headshot']));
     }
     $display_homepage = isset($_POST['team_display_homepage']) ? '1' : '0';
     update_post_meta($post_id, 'team_display_homepage', $display_homepage);
