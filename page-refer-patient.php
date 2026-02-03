@@ -3,35 +3,26 @@
  * Template Name: Refer a Patient
  *
  * Custom page template for the Refer a Patient page.
+ * Heading, description, and image editable via meta box.
  */
 
-get_header(); ?>
+get_header();
 
-<div id="ry-pg-banner">
-    <div class="col-xs-12 ry-bnr-wrp ry-el-bg" style="background-image: url('<?php
-        if (function_exists('get_field')) {
-            $banner_image = get_field('banner_image');
-        }
-        if (empty($banner_image)) {
-            $banner_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-        }
-        if (empty($banner_image)) {
-            $banner_image = 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/ib.jpg';
-        }
-        echo esc_url($banner_image);
-    ?>');">
-        <div class="col-xs-12 ">
-            <img src="<?php echo esc_url($banner_image); ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" class="img-responsive">
-        </div>
-    </div>
-    <div class="col-xs-12 ry-pg-title">
-        <div class="col-xs-12 ry-container">
-            <div>
-                <h1><?php the_title(); ?></h1>
-            </div>
-        </div>
-    </div>
-</div>
+get_template_part('template-parts/page-banner');
+
+$refer_heading = get_post_meta(get_the_ID(), 'refer_form_heading', true);
+if (empty($refer_heading)) {
+    $refer_heading = 'Referral Form';
+}
+$refer_description = get_post_meta(get_the_ID(), 'refer_form_description', true);
+if (empty($refer_description)) {
+    $refer_description = 'We accept referrals for individuals seeking thoughtful, accessible mental health care.';
+}
+$refer_image = get_post_meta(get_the_ID(), 'refer_form_image', true);
+if (empty($refer_image)) {
+    $refer_image = 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/contact_form_photos.jpg';
+}
+?>
 
 <div id="ry-pg-content">
     <div id="ry-pg-body" class="col-xs-12 ry-section" data-interior-layout="Sidebar">
@@ -40,18 +31,17 @@ get_header(); ?>
                 <div class="col-xs-12 col-md-12 col-lg-12 ">
                     <div class="col-xs-12 custom-form-v2">
                         <div class="col-xs-12 photo">
-                            <img src="https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/contact_form_photos.jpg" loading="lazy" alt="" class="img-responsive">
+                            <img src="<?php echo esc_url($refer_image); ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" class="img-responsive">
                         </div>
                         <div class="col-xs-12 form-wrapper">
                             <div>
-                                <h3>Referral Form</h3>
-                                <p>We accept referrals for individuals seeking thoughtful, accessible mental health care. <br>&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203;</p>
+                                <h3><?php echo esc_html($refer_heading); ?></h3>
+                                <p><?php echo wp_kses_post($refer_description); ?></p>
                             </div>
                             <div class="clearfix "></div>
                             <?php
                             // Check if Contact Form 7 is available
                             if (function_exists('wpcf7_contact_form')) {
-                                // Use Contact Form 7 shortcode if available
                                 echo do_shortcode('[contact-form-7 id="referral"]');
                             } else {
                                 // Custom referral form

@@ -2,37 +2,19 @@
 /**
  * Template Name: Request an Appointment
  *
- * Custom page template for the Request an Appointment page
+ * Custom page template for the Request an Appointment page.
+ * Introduction text editable via meta box. Sidebar via partial.
  */
 
-get_header(); ?>
+get_header();
 
-<div id="ry-pg-banner">
-    <div class="col-xs-12 ry-bnr-wrp ry-el-bg" style="background-image: url('<?php
-        // Check if ACF is available, otherwise use featured image or default
-        if (function_exists('get_field')) {
-            $banner_image = get_field('banner_image');
-        }
-        if (empty($banner_image)) {
-            $banner_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-        }
-        if (empty($banner_image)) {
-            $banner_image = 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/ib.jpg';
-        }
-        echo esc_url($banner_image);
-    ?>');">
-        <div class="col-xs-12 ">
-            <img src="<?php echo esc_url($banner_image); ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" class="img-responsive">
-        </div>
-    </div>
-    <div class="col-xs-12 ry-pg-title">
-        <div class="col-xs-12 ry-container">
-            <div>
-                <h1><?php the_title(); ?></h1>
-            </div>
-        </div>
-    </div>
-</div>
+get_template_part('template-parts/page-banner');
+
+$appointment_intro = get_post_meta(get_the_ID(), 'appointment_intro', true);
+if (empty($appointment_intro)) {
+    $appointment_intro = 'At Zellig, we provide the highest quality service to all our patients. Use the form below to request your appointment. Please indicate your preferred date and time. Please note that we will reach out to you first to confirm your appointment or to provide you with an alternative date. You may also call us to request an appointment. Thank you!';
+}
+?>
 
 <div id="ry-pg-content">
     <div id="ry-pg-body" class="col-xs-12 ry-section" data-interior-layout="Sidebar">
@@ -42,13 +24,12 @@ get_header(); ?>
                     <div class="col-xs-12 ry-form">
                         <div class="col-xs-12 ry-content">
                             <div class="ry-text">
-                                <p>At Zellig, we provide the highest quality service to all our patients. Use the form below to request your appointment. Please indicate your preferred date and time. Please note that we will reach out to you first to confirm your appointment or to provide you with an alternative date. You may also call us to request an appointment. Thank you!</p>
+                                <p><?php echo wp_kses_post($appointment_intro); ?></p>
                             </div>
                         </div>
                         <?php
                         // Check if Contact Form 7 is available
                         if (function_exists('wpcf7_contact_form')) {
-                            // Use Contact Form 7 shortcode if available
                             echo do_shortcode('[contact-form-7 id="appointment"]');
                         } else {
                             // Custom appointment form
@@ -116,42 +97,7 @@ get_header(); ?>
                         ?>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-4 col-lg-4 ry-right">
-                    <div id="ry-sidebar" class="col-xs-12 ">
-                        <div class="col-xs-12 ry-sb-main">
-                            <div class="input-group search-bar-widget " id="searchfield" data-url="<?php echo esc_url(home_url('/search-result/')); ?>" data-variables="search">
-                                <input type="text" class="form-control" placeholder="Enter search keyword" value="">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary search-btn" type="button"><i class="fa fa-search"></i></button>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 ry-sb-cta">
-                            <div class="col-xs-12 ry-cta-wrp ry-el-bg ry-el-link">
-                                <div class="col-xs-12 ry-cta">
-                                    <div class="col-xs-12 ry-cta-contain">
-                                        <img src="https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/sb1.jpg" loading="lazy" alt="Eye Care Services" class="img-responsive">
-                                        <div>
-                                            <p>Services</p>
-                                            <a href="<?php echo esc_url(home_url('/services/')); ?>" class="ry-btn ry-btn-primary">Learn More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 ry-cta-wrp ry-el-bg ry-el-link">
-                                <div class="col-xs-12 ry-cta">
-                                    <div class="col-xs-12 ry-cta-contain">
-                                        <img src="https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/sb2.jpg" loading="lazy" alt="Contact Us" class="img-responsive">
-                                        <div>
-                                            <p>Keep In Touch</p>
-                                            <a href="<?php echo esc_url(home_url('/contact-us/')); ?>" class="ry-btn ry-btn-primary">Contact Us</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php get_template_part('template-parts/sidebar-cta'); ?>
             </div>
         </div>
     </div>

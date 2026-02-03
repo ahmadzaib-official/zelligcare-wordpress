@@ -324,6 +324,12 @@ require get_template_directory() . '/inc/jetpack.php';
 // Custom Post Types (Team, Specialties, Services)
 require get_template_directory() . '/inc/custom-post-types.php';
 
+// Theme Customizer Options (Contact Info, Social Media, Default Images)
+require get_template_directory() . '/inc/theme-options.php';
+
+// Page-specific Meta Boxes (Careers, Payment, Review, Form Pages)
+require get_template_directory() . '/inc/page-meta-boxes.php';
+
 // Fallback menu function
 function zelligcare_fallback_menu() {
     echo '<ul class="nav-menu ry-nav">';
