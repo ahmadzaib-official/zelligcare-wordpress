@@ -321,6 +321,9 @@ require get_template_directory() . '/inc/customizer.php';
 // Load Jetpack compatibility file
 require get_template_directory() . '/inc/jetpack.php';
 
+// Custom Post Types (Team, Specialties, Services)
+require get_template_directory() . '/inc/custom-post-types.php';
+
 // Fallback menu function
 function zelligcare_fallback_menu() {
     echo '<ul class="nav-menu ry-nav">';
