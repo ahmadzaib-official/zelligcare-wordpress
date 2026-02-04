@@ -1,0 +1,241 @@
+/**
+ * Zellig Library Page Styles
+ * Custom styles for the Library/Blog page matching library.html and overrides.css
+ */
+
+/* Page Banner Styles */
+#ry-pg-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ry-pg-banner .ry-bnr-wrp {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#ry-pg-banner .ry-bnr-wrp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ry-pg-banner .ry-pg-title {
+    visibility: visible;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#ry-pg-banner .ry-pg-title h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400 !important;
+    letter-spacing: initial;
+    font-family: 'Tenor Sans', sans-serif !important;
+    line-height: 1;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-transform: uppercase;
+}
+
+/* Library Template - Matching original overrides.css exactly */
+.library-template .ry-container {
+    max-width: 1600px !important;
+    width: 90%;
+}
+
+.library-template .ry-container .ry-flex {
+    flex-wrap: wrap;
+}
+
+.library-template .ry-container .ry-flex .each {
+    margin-bottom: 30px;
+    padding: 50px 40px;
+    background: #efe8df;
+    border-radius: 30px;
+}
+
+.library-template .ry-container .ry-flex .each .ry-photo {
+    padding: 0;
+}
+
+.library-template .ry-container .ry-flex .each .each-container {
+    display: flex;
+    gap: 30px;
+    height: 100%;
+}
+
+.library-template .ry-container .ry-flex .each .each-container .ry-photo {
+    width: 50%;
+    max-width: 420px;
+    position: relative;
+}
+
+.library-template .ry-container .ry-flex .each .each-container .ry-photo img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.library-template .ry-container .ry-flex .each .each-container .text {
+    width: 50%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.library-template .ry-container .ry-flex .each .each-container .text .title h4 {
+    margin: 0 !important;
+    font-size: 28px !important;
+    color: #3e4f5f !important;
+    line-height: 1 !important;
+    margin-bottom: 20px !important;
+}
+
+.library-template .ry-container .ry-flex .each .each-container .text .title p {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400 !important;
+    color: #666666 !important;
+}
+
+.library-template .ry-container .ry-flex .each .each-container .text .post-art {
+    display: block;
+    margin-top: 20px;
+}
+
+.library-template .ry-container .ry-flex .each .each-container .text .post-art .date {
+    font-weight: 700 !important;
+    color: #666;
+}
+
+.library-template .ry-container .ry-flex .each .each-container .text .button-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Landscape layout */
+.library-template .ry-container .ry-flex .each.is-landscape {
+    width: calc(40% - 15px);
+    max-width: 640px;
+    background: #f9f6f3;
+}
+
+.library-template .ry-container .ry-flex .each.is-landscape .each-container {
+    flex-direction: column;
+}
+
+.library-template .ry-container .ry-flex .each.is-landscape .each-container .ry-photo,
+.library-template .ry-container .ry-flex .each.is-landscape .each-container .text {
+    width: 100%;
+    max-width: 100%;
+}
+
+.library-template .ry-container .ry-flex .each.is-landscape .ry-photo {
+    padding-bottom: 40%;
+}
+
+.library-template .ry-container .ry-flex .each.is-landscape .ry-photo img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.library-template .ry-container .ry-flex .each.is-landscape .each-container .button-wrapper {
+    margin-top: 30px;
+}
+
+/* Portrait layout */
+.library-template .ry-container .ry-flex .each.is-portrait {
+    max-width: 940px;
+    width: calc(60% - 15px);
+}
+
+.library-template .ry-container .ry-flex .each.is-portrait .text {
+    padding-top: 40px;
+}
+
+.library-template .ry-container .ry-flex .each.is-portrait .ry-photo {
+    padding-bottom: 65%;
+    height: 0;
+}
+
+.library-template .ry-container .ry-flex .each.is-portrait .ry-photo img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 40px;
+    }
+    
+    .library-template .ry-container .ry-flex .each {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .library-template .ry-container .ry-flex .each.is-portrait,
+    .library-template .ry-container .ry-flex .each.is-landscape {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .library-template .ry-container .ry-flex .each .each-container {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+    
+    .library-template .ry-container .ry-flex .each .each-container .ry-photo {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative;
+        padding-bottom: 56.25% !important;
+        height: 100%;
+    }
+    
+    .library-template .ry-container .ry-flex .each .each-container .ry-photo img {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100% !important;
+    }
+    
+    .library-template .ry-container .ry-flex .each .each-container .text {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .library-template .ry-container .ry-flex .each.is-portrait .text {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .library-template .ry-container .ry-flex .each.is-portrait h4,
+    .library-template .ry-container .ry-flex .each.is-portrait p,
+    .library-template .ry-container .ry-flex .each .each-container .text .post-art .date {
+        text-align: center;
+    }
+    
+    .library-template .ry-container .ry-flex .each .each-container .text .button-wrapper {
+        justify-content: center;
+    }
+    
+    .library-template .ry-container .ry-flex .each .each-container .text .ry-btn {
+        margin: auto;
+    }
+}

@@ -1,0 +1,189 @@
+/**
+ * Meet Our Team Page Styles
+ * Custom styles for the Meet Our Team page matching meet-our-team.html and overrides.css
+ */
+
+/* Page Banner Styles */
+#ry-pg-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ry-pg-banner .ry-bnr-wrp {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#ry-pg-banner .ry-bnr-wrp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ry-pg-banner .ry-pg-title {
+    visibility: visible;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#ry-pg-banner .ry-pg-title h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400 !important;
+    letter-spacing: initial;
+    font-family: 'Tenor Sans', sans-serif !important;
+    line-height: 1;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-transform: uppercase;
+}
+
+/* Team Section - Matching original overrides.css exactly */
+.inner-team-page {
+    padding: 0;
+}
+
+.module-team.custom {
+    padding: 380px 0;
+    margin-top: -180px;
+}
+
+.module-team.custom .ry-container {
+    max-width: 1400px;
+    width: 90%;
+}
+
+.module-team.custom .ry-flex {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.module-team.custom .ry-flex .each {
+    max-width: 620px;
+}
+
+.module-team.custom .ry-flex .each .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.module-team.custom .ry-flex .each .photo {
+    max-width: 260px;
+    z-index: 2;
+    border-radius: 50%;
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.module-team.custom .ry-flex .each .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.module-team.custom .ry-flex .each .title {
+    padding: 30px 30px 50px;
+    padding-top: 180px;
+    margin-top: -170px;
+    background: #fff;
+    border-radius: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.module-team.custom .ry-flex .each .title p {
+    text-align: center;
+    line-height: 1;
+    font-size: 30px;
+    font-family: 'Tenor Sans', sans-serif !important;
+    color: #3e4f5f !important;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.module-team.custom .ry-flex .each .title p .span-1 {
+    display: block;
+    font-size: 24px;
+    font-family: 'Jost', sans-serif;
+    text-transform: initial;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    color: #3e4f5f;
+}
+
+.module-team.custom .ry-flex .each .ry-btn {
+    margin: auto;
+    display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    #ry-pg-banner .ry-pg-title h1 {
+        font-size: 40px;
+    }
+    
+    .module-team.custom {
+        padding: 200px 0;
+        margin-top: -100px;
+    }
+    
+    .module-team.custom .ry-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .module-team.custom .ry-flex .each {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .module-team.custom .ry-flex .each .photo {
+        max-width: 200px;
+    }
+    
+    .module-team.custom .ry-flex .each .title {
+        padding-top: 150px;
+        margin-top: -140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .module-team.custom {
+        padding: 150px 0;
+        margin-top: -80px;
+    }
+    
+    .module-team.custom .ry-flex .each .photo {
+        max-width: 180px;
+    }
+    
+    .module-team.custom .ry-flex .each .title {
+        padding: 20px 20px 40px;
+        padding-top: 130px;
+        margin-top: -120px;
+    }
+    
+    .module-team.custom .ry-flex .each .title p {
+        font-size: 24px;
+    }
+    
+    .module-team.custom .ry-flex .each .title p .span-1 {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}

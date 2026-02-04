@@ -1,0 +1,244 @@
+/* Request Appointment */
+
+
+.module-appointment.option-1 .ry-flex .ry-each:nth-child(1) {
+	padding: 6vw;
+	background: #fff;
+	/*background: linear-gradient(to bottom, rgb(255 255 255 / 70%) 0%, #fff 80%);*/
+	max-width: 780px;
+	width: 50%;
+	border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 20px 50px #bd945a10;
+}
+
+.module-appointment.option-1 .section-headline h2 {
+	color: #bd945a;
+	font-size: 42px;
+	text-align: left;
+}
+
+.module-appointment.option-1 .ry-flex .ry-each .ry-text p {
+	text-align: left;
+	line-height: 1.5;
+	margin: 15px 0 30px;
+}
+
+.module-appointment.option-1 .form-block .form-control {
+	height: 60px;
+	border-radius: unset;
+	box-shadow: unset;
+	padding-left: 55px;
+	font-size: 18px;
+}
+
+.module-appointment.option-1 .form-block textarea.form-control {
+	height: 200px;
+	padding-top: 15px;
+	resize: none;
+}
+
+.module-appointment.option-1 .form-block  .input-wrap.flex {
+	margin-left: -10px;
+	width: calc(100% + 10px);
+}
+
+.module-appointment.option-1 .form-block .input-wrap.flex .input-wrap {
+	margin-left: 10px;
+	width: calc(50% - 10px);
+}
+
+.module-appointment.option-1 .form-block .form-group {
+	margin-bottom: 10px;
+}
+
+.module-appointment.option-1 .ry-flex .ry-each:nth-child(2) {
+	padding-top: 6vw;
+	max-width: 650px;
+	width: 50%;
+}
+
+.module-appointment.option-1  .photo {
+	border: 10px solid #fff;
+}
+
+.module-appointment.option-1  .carousel-control {
+	background: transparent;
+	width: auto;
+	height: auto;
+}
+
+.module-appointment.option-1 .carousel-control span {
+	margin: 0;
+}
+
+.module-appointment.option-1 .carousel-control span:before {
+	border: solid #FFFFFF;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 7px;
+	content: "";
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+.module-appointment.option-1 .carousel-control.right span:before {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+.module-appointment.option-1 .carousel-control.right {
+	right: 30px;
+}
+
+.module-appointment.option-1 .carousel-control.left {
+	left: 30px;
+}
+
+.module-appointment.option-1:before {
+	content: "";
+	width: 100%;
+	height: calc(100% - 90px);
+	background: #184f5a;
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.module-appointment.option-1:after {
+	content: "";
+	width: 100%;
+	height: calc(100% - 90px);
+	background: #bd945a;
+	background-image: url('');
+	background-size:cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 0;
+	top: 0;
+	opacity: 0.3;
+}
+
+.module-appointment.option-1 .ry-content {
+	position: relative;
+	z-index: 3;
+}
+
+/*.module-appointment.option-1 .ry-flex .ry-each:nth-child(2) .section-headline h2, .module-appointment.option-1 .ry-flex .ry-each:nth-child(2) .ry-text p {
+	color: #111 !important;
+}*/
+
+.module-appointment.option-1 .form-block .input-wrap .svg-fields svg {
+	width: 18px;
+	opacity: .5;
+}
+
+.module-appointment.option-1 .form-block .input-wrap .svg-fields {
+	position: absolute;
+	top: 20px;
+	left: 25px;
+}
+.module-appointment.option-1 .btn,
+.module-appointment.option-2 .btn  {
+	border-radius: 0;
+	padding: 13px 20px;
+	background: #bd945a;
+	border: unset !important; }
+.module-appointment.option-1 .btn:hover,
+.module-appointment.option-2 .btn:hover {
+	color: #FFFFFF;
+	background: #184f5a;}
+.module-appointment.option-1 .btn.btn-primary, 
+.module-appointment.option-1 .btn.ry-btn-primary,
+.module-appointment.option-2 .btn.btn-primary, 
+.module-appointment.option-2 .btn.ry-btn-primary {
+	border: 1px solid transparent; }
+.module-appointment.option-1 .btn.arrow-right::after,
+.module-appointment.option-2 .btn.arrow-right::after {
+	content: '\f105';
+	font-family: fontawesome;
+	margin-left: 10px; }
+
+@media (max-width: 1660px) {
+	.module-appointment.option-1 .ry-flex .ry-each:nth-child(2) {
+		padding: 6vw 30px;
+	}
+}
+@media (max-width: 991px) {
+	.module-appointment.option-1 {
+		padding: 100px 0 0;
+	}
+	.module-appointment.option-1 .section-headline h2 {
+		font-size: 230%;
+	}
+	.module-appointment.option-1 .ry-flex .ry-each .ry-text p,
+	.module-appointment.option-1 .form-block .form-control {
+		font-size: 90%;
+	}
+	.module-appointment.option-1 .ry-flex {
+		flex-direction: column;
+	}
+	.module-appointment.option-1 .ry-flex .ry-each:nth-child(1), 
+	.module-appointment.option-1 .ry-flex .ry-each:nth-child(2) {
+		max-width: 100%;
+		width: 100%;
+	}
+	.module-appointment.option-1 .section-headline h2, 
+	.module-appointment.option-1 .ry-flex .ry-each .ry-text p {
+		text-align: center;
+	}
+	.module-appointment.option-1 .ry-flex .ry-each:nth-child(1) {
+		padding: 60px 30px;
+		box-shadow: 0px 0px 50px #0a507010;
+	}
+	.module-appointment.option-1 .ry-flex .ry-each:nth-child(2) {
+		padding: 60px 30px;
+	}
+}
+@media (max-width: 620px) {
+	.module-appointment.option-1 .form-block .input-wrap.flex .input-wrap {
+		width: calc(100% - 10px);
+	}
+	.module-appointment.option-1:before {
+		/*position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: calc(100% - 50%);
+		content: "";
+		background: #184f5a;
+		z-index: 2;*/
+		height: calc(100% - 25%);
+		z-index: 2;
+		opacity: 0.8;
+		background: #bd945a;
+		top: unset;
+		bottom: 0;
+	}
+	.module-appointment.option-1:after {
+		height: calc(100% - 25%);
+		/*background: #252324;*/
+		position: absolute;
+		right: 0;
+		top: unset;
+		bottom: 0;
+		opacity: 1;
+	}
+	.module-appointment.option-1 .ry-flex .ry-each:nth-child(1){
+		box-shadow: 0px 20px 50px #bd945a20;
+		border-radius: 20px;
+	}
+}
+
+@media (max-width: 414px) {
+	.module-appointment.option-1 .section-headline h2 {
+		font-size: 160%;
+	}
+	.module-appointment.option-1 .ry-flex .ry-each .ry-text p {
+		font-size: 16px;
+	}	
+}
+
+.module-appointment.option-1 .ry-flex .ry-each:nth-child(2) h2, .module-appointment.option-1 .ry-flex .ry-each:nth-child(2) p {
+    color: #fff !important;
+}

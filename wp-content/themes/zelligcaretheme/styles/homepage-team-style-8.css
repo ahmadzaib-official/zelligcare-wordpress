@@ -1,0 +1,151 @@
+.module-team.style-8 {
+    overflow: hidden;
+}
+.module-team.style-8:before {
+    position: absolute;
+    content: "";
+    z-index: 1;
+    width: 200%;
+    height: 100%;
+    background: #fff;
+    transform: rotate(23deg);
+    left: -90%;
+    bottom: -24%;
+}
+
+.module-team.style-8 .content {
+    padding: 330px 0 100px;
+    max-width: 580px;
+    position: relative;
+    z-index: 3;
+}
+
+.module-team.style-8 .content .section-headline h2 {
+    font-size: 58px;
+    text-transform: uppercase;
+    letter-spacing: initial;
+    margin-bottom: 10px;
+}
+
+.module-team.style-8 .content .ry-text p {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.module-team.style-8 .section-background, .module-team.style-8 .section-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+}
+
+.module-team.style-8 .section-overlay-bg:before {
+    content: "";
+    width: 200%;
+    height: 80%;
+    background: #bd945a;
+    position: absolute;
+    transform: rotate(165deg);
+    top: -110%;
+    left: -20%;
+    opacity: .5;
+}
+
+.module-team.style-8 .section-overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.module-team.style-8 .section-overlay-bg:after {
+    content: "";
+    width: 200%;
+    height: 80%;
+    background: #bd945a;
+    position: absolute;
+    transform: rotate(165deg);
+    bottom: -110%;
+    right: -20%;
+    opacity: .5;
+}
+/** PLACE YOUR MOBILE AND UP CSS HERE **/
+
+@media (max-width: 1680px) {
+
+	/** PLACE YOUR TABLET AND UP CSS HERE **/
+	.module-team.style-8:before {
+		bottom: -25%;
+	}
+	.module-team.style-8 .content .section-headline h2 {
+		font-size: 50px;
+	}
+	.module-team.style-8 .section-overlay-bg:before {
+		top: -95%;
+	}
+	.module-team.style-8 .section-overlay-bg:after {
+		bottom: -95%;
+	}
+}
+
+@media (max-width: 1080px) {
+
+	/** PLACE YOUR LAPTOP AND UP CSS HERE **/
+	.module-team.style-8:before {
+		opacity: 0;
+	}
+
+	.module-team.style-8 .section-background {
+		position: relative;
+		padding-bottom: 75%;
+	}
+
+	.module-team.style-8 .content {
+		padding: 100px 0;
+		max-width: 100%;
+	}
+
+	.module-team.style-8 .content .section-headline h2, 
+	.module-team.style-8 .content .ry-text p {
+		text-align: center;
+	}
+
+	.module-team.style-8 .content .ry-text .ry-btn {
+		margin: 0 auto;
+	}
+
+	.module-team.style-8 .section-overlay-bg {
+		height: 0;
+		padding-bottom: 75%;
+		top: unset;
+		bottom: 0;
+	}
+
+}
+@media (max-width: 480px) {
+	.module-team.style-8 .content .section-headline h2 {
+		font-size: 42px;
+	}
+	.module-team.style-8 .content .ry-text p {
+		font-size: 18px;
+		line-height: 1.6;
+	}
+}
+@media (max-width: 420px) {
+	.module-team.style-8 .content .ry-text p {
+		font-size: 16px;
+	}
+}
+@media (min-width: 2100px) {
+
+	/** PLACE YOUR DESKTOP AND UP CSS HERE **/
+	.module-team.style-8:before {
+		bottom: -10%;
+	}
+}
