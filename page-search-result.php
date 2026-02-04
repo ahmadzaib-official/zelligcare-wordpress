@@ -11,6 +11,9 @@ get_header();
 get_template_part('template-parts/page-banner');
 
 $search_query = get_search_query();
+if (empty($search_query) && isset($_GET['search'])) {
+    $search_query = sanitize_text_field($_GET['search']);
+}
 $phone = get_theme_mod('zelligcare_phone', '(555) 123-4567');
 $phone_digits = preg_replace('/[^0-9]/', '', $phone);
 ?>

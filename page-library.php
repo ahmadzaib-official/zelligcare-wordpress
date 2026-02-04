@@ -37,6 +37,9 @@ get_template_part('template-parts/page-banner');
                             while ($blog_query->have_posts()) : $blog_query->the_post();
                                 $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
                                 if (empty($thumbnail_url)) {
+                                    $thumbnail_url = get_post_meta(get_the_ID(), 'blog_thumbnail_url', true);
+                                }
+                                if (empty($thumbnail_url)) {
                                     $thumbnail_url = get_theme_mod('zelligcare_default_banner', 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/ib.jpg');
                                 }
                                 ?>
