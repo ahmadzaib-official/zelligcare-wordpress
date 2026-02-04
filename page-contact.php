@@ -55,6 +55,16 @@ if (empty($contact_heading)) {
                                                 </div>
                                             </div>
                                             <div class="col-xs-12 ">
+                                                <div class="form-group" data-type="text">
+                                                    <input name="Insurance_Company" value="" id="Insurance_Company" type="text" placeholder="Insurance Company" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 ">
+                                                <div class="form-group" data-type="text">
+                                                    <input name="Member_ID" value="" id="Member_ID" type="text" placeholder="Member ID" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 ">
                                                 <div class="form-group " data-type="text" data-required="true">
                                                     <textarea name="Message" id="Message" placeholder="Enter message" class="form-control"></textarea>
                                                 </div>
@@ -83,6 +93,20 @@ if (empty($contact_heading)) {
                                     <?php
                                 }
                                 ?>
+                            </div>
+                            <div class="col-xs-12 ry-office-hours" data-aos-duration="1500" data-aos="fade-up" data-aos-delay="500" style="margin-top: 40px;">
+                                <h3>Office Hours</h3>
+                                <table class="table">
+                                    <tbody>
+                                        <tr><td>Monday</td><td>8:00am - 5:00pm</td></tr>
+                                        <tr><td>Tuesday</td><td>8:00am - 5:00pm</td></tr>
+                                        <tr><td>Wednesday</td><td>8:00am - 5:00pm</td></tr>
+                                        <tr><td>Thursday</td><td>Closed</td></tr>
+                                        <tr><td>Friday</td><td>8:00am - 5:00pm</td></tr>
+                                        <tr><td>Saturday</td><td>Closed</td></tr>
+                                        <tr><td>Sunday</td><td>Closed</td></tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
