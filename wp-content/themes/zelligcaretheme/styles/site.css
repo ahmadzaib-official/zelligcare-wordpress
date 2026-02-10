@@ -147,7 +147,7 @@ body.default h6,
 
 	#ry-pg-banner .ry-container,
 	#ry-pg-body .ry-container {
-		max-width: 95%;
+		max-width: 1300px;
 	}
 }
 
@@ -236,7 +236,7 @@ body.default h6 {
 	display: block;
 	width: 100%;
 	height: 50px;
-	background-image: url(https://s3.amazonaws.com/static.organiclead.com/Site-31d61482-8c99-49ba-aa86-d48519073e8c/svp_contact_shadow.png);
+	background-image: url(../images/ui/svp_contact_shadow.png);
 	background-position: center;
 	background-size: cover;
 	opacity: 0.2;
@@ -543,27 +543,22 @@ body.default h6 {
 	}
 }
 
+#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title,
 #ry-pg-banner .ry-bnr-wrp .ry-pg-title h1 {
-	color: #bd945a !important;
-	text-transform: none;
-	letter-spacing: 5px;
-	text-transform: uppercase;
-	font-weight: 700;
-}
-
-#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title {
-	font-size: calc(30px + 20 * ((100vw - 992px) / 608));
+	font-size: 60px !important;
+	font-weight: 400 !important;
+	letter-spacing: initial !important;
+	font-family: 'Tenor Sans' !important;
+	max-width: 70%;
+	line-height: 1;
+	padding: 0 !important;
+	margin: 0 !important;
 }
 
 @media screen and (max-width: 992px) {
-	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title {
-		font-size: 30px;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title {
-		font-size: 50px;
+	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title,
+	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1 {
+		font-size: 30px !important;
 	}
 }
 
@@ -1416,7 +1411,7 @@ body.default h6 {
 
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
 	.module-327 div#ratingsHero {
-		background: url(https://www.royacdn.com/unsafe/smart/Site-267d6cb1-b05a-4c2a-a59f-97c1e8b11b65/get_reviews/review_bnr_laptop.jpg) 100% 100%;
+		background: url(../images/ui/legacy/review_bnr_laptop.jpg) 100% 100%;
 	}
 
 	.module-327 div.pg-copy p {
@@ -1459,7 +1454,7 @@ body.default h6 {
 
 @media only screen and (max-width: 991px) {
 	.module-327 div#ratingsHero {
-		background: url(https://www.royacdn.com/unsafe/Site-2ac7da87-1c9c-494e-93ac-7b7504f1927b/homepage/spinal.jpg) 100% 100%;
+		background: url(../images/ui/legacy/spinal.jpg) 100% 100%;
 	}
 
 	.module-327 .pg-photo img {
@@ -1537,7 +1532,7 @@ body.default h6 {
 
 @media only screen and (max-width: 767px) {
 	.module-327 div#ratingsHero {
-		background: url(https://www.royacdn.com/unsafe/smart/Site-267d6cb1-b05a-4c2a-a59f-97c1e8b11b65/get_reviews/review_bnr_mobile_v3.jpg) 90% 100%;
+		background: url(../images/ui/legacy/review_bnr_mobile_v3.jpg) 90% 100%;
 	}
 
 	.module-327 .active-review-content:before {
@@ -2031,7 +2026,7 @@ body.default h6 {
 	}
 
 	.landing-page .bnr-hero {
-		background: url(https://www.royacdn.com/unsafe/Site-77691801-5034-4efc-8f11-cf20bab37e72/landing_dry_eye/hero.jpg);
+		background: url(../images/ui/legacy/hero.jpg);
 		height: 45vw;
 		background-size: cover;
 		background-position: 80% 50%;
@@ -3277,7 +3272,7 @@ body.default h6 {
 	}
 
 	.module-14.style-3 .item .card .blur-photo {
-		background-image: url(https://www.royacdn.com/unsafe/Site-df6f8a80-211f-4bcd-b2d4-3eb54e11f05a/Homepage_Slides/HomepageSliders_1.jpg);
+		background-image: url(../images/ui/legacy/HomepageSliders_1.jpg);
 		width: 100%;
 		height: 100%;
 		position: absolute;

@@ -2,7 +2,7 @@
 	font-size: 80px;
 	font-weight: 400 !important;
 	font-family: 'Tenor Sans' !important;
-	text-transform: uppercase;
+	text-transform: uppercase !important;
 	letter-spacing: -0.5px;
 	line-height: 1;
 }
@@ -19,7 +19,7 @@
 	font-size: 24px;
 	font-weight: 400 !important;
 	font-family: 'Tenor Sans', sans-serif !important;
-	text-transform: uppercase;
+	text-transform: uppercase !important;
 	letter-spacing: 5px;
 	color: #184f5a;
 }
@@ -31,8 +31,8 @@
 
 .ry-btn.ry-btn-primary:not(:hover),
 .module-43 .ry-btn.ry-btn-primary:not(:hover) {
-	background: #bd945a !important;
-	color: #FFFFFF !important;
+	background: #d7c5af !important;
+	color: #555 !important;
 }
 
 .ry-btn.ry-btn-primary:hover,
@@ -223,20 +223,12 @@
 }
 
 .module-services.custom .ry-headline h2 .span-1 {
-	display: block;
-	font-size: 30px;
-	font-weight: 400;
-	letter-spacing: 3px;
 	color: #fff;
-	text-transform: uppercase;
 	margin-bottom: 10px;
 }
 
 .module-services.custom .ry-headline h2 {
-	font-size: 80px !important;
 	color: #fff !important;
-	font-family: 'Tenor Sans' !important;
-	font-weight: 400 !important;
 }
 
 #section-services {
@@ -251,7 +243,7 @@
 }
 
 .module-offer {
-	background-image: url(https://s3.amazonaws.com/static.organiclead.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/imgi_50_wwf_bg_pattern_repeat_new.png);
+	background-image: url(../images/homepage/imgi_50_wwf_bg_pattern_repeat_new.png);
 	padding-top: 200px;
 	padding-bottom: 420px;
 }
@@ -317,14 +309,14 @@
 	max-width: 1600px;
 }
 
-.module-offer.inner-condition-template .group-block .content .each.each-text .ry-text p {
+#ry-pg-content .module-offer.inner-condition-template .group-block .content .each.each-text .ry-text p {
 	font-size: 18px;
 	line-height: 1.5 !important;
 	margin: 0;
 }
 
-.module-offer.inner-condition-template .group-block .content .each.each-text .ry-text h3 {
-	font-family: 'Jost' !important;
+#ry-pg-content .module-offer.inner-condition-template .group-block .content .each.each-text .ry-text h3 {
+	font-family: 'Tenor Sans' !important;
 	font-weight: 400 !important;
 	color: #18505a;
 	line-height: 1;
@@ -348,7 +340,7 @@
 
 .module-offer.inner-condition-template {
 	padding: 160px 0;
-	background-image: url(https://s3.amazonaws.com/static.organiclead.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/imgi_50_wwf_bg_pattern_repeat_new.png);
+	background-image: url(../images/homepage/imgi_50_wwf_bg_pattern_repeat_new.png);
 	background-repeat: repeat;
 }
 
@@ -447,7 +439,7 @@
 	gap: 90px 40px;
 	flex-wrap: wrap;
 	justify-content: center !important;
-	overflow: visible !important;
+	overflow: visible;
 }
 
 .module-services.custom .ry-flex .each {
@@ -468,8 +460,8 @@
 }
 
 .module-services.custom .ry-flex .each .wrapper .photo {
-	width: 200px;
-	height: 200px;
+	width: 140px;
+	height: 140px;
 	border-radius: 50%;
 	background: #fff;
 	margin-bottom: 25px;
@@ -497,10 +489,8 @@
 }
 
 .module-services.custom .ry-flex .each .wrapper .photo img {
-	height: auto;
-	max-height: 180px;
+	height: 70px;
 	width: auto;
-	max-width: 180px;
 	object-fit: contain;
 }
 
@@ -510,7 +500,7 @@
 }
 
 .module-services.custom .ry-flex .each .wrapper .service-title div {
-	font-size: 24px;
+	font-size: 26px;
 	line-height: 1.1;
 	text-transform: uppercase;
 	font-family: 'Tenor Sans', sans-serif !important;
@@ -538,26 +528,29 @@
 	text-decoration: underline;
 }
 
+/* Hide carousel nav on desktop */
+.services-carousel-nav {
+	display: none;
+}
+
 .module-footer.custom .each .title {
-	font-family: 'Jost' !important;
+	font-family: 'Tenor Sans' !important;
 	font-weight: 400;
-	font-style: Regular;
-	font-size: 24px;
+	font-size: 34px;
 	line-height: 51px;
-	letter-spacing: 0%;
-	vertical-align: middle;
 	text-transform: uppercase;
 	margin-bottom: 20px;
 }
 
 .location-item h3 {
 	font-family: 'Tenor Sans', sans-serif !important;
-	font-size: 30px;
-	color: #184f5a;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	margin: 0;
-	font-weight: 400;
+	font-size: 20px !important;
+	color: #184f5a !important;
+	text-transform: uppercase !important;
+	letter-spacing: 2px !important;
+	margin: 0 !important;
+	font-weight: 400 !important;
+	line-height: normal !important;
 }
 
 .module-locations.custom {
@@ -579,7 +572,7 @@
 }
 
 .module-locations.custom .ry-headline h2 {
-	font-size: 80px !important;
+	font-size: 60px !important;
 }
 
 .module-locations.custom .locations-grid {
@@ -753,7 +746,7 @@
 }
 
 .module-cta.custom .ry-flex .each.each-1 h3 {
-	font-size: 50px;
+	font-size: 40px;
 	font-family: 'Tenor Sans', sans-serif !important;
 	font-weight: 400 !important;
 	line-height: 1;
@@ -780,7 +773,7 @@
 	left: 0;
 	width: 110%;
 	height: 110%;
-	background-image: url(https://s3.amazonaws.com/static.organiclead.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/wwa_img_left.png);
+	background-image: url(../images/homepage/wwa_img_left.png);
 	background-size: cover;
 }
 
@@ -799,7 +792,7 @@
 }
 
 .module-team.custom .ry-headline h2 {
-	font-size: 80px !important;
+	font-size: 62px !important;
 }
 
 .module-team.custom .ry-container {
@@ -836,7 +829,7 @@
 .module-team.custom .ry-flex .each .title p span {
 	display: block;
 	font-size: 24px;
-	font-family: 'Tenor Sans' !important;
+	font-family: 'Jost' !important;
 	text-transform: initial;
 	margin-top: 15px;
 	margin-bottom: 30px;
@@ -1015,9 +1008,15 @@
 	color: #bd945a;
 }
 
-.module-insurance.custom .wrapper .ry-flex .each img,
 .module-insurance.custom .wrapper .ry-flex .each {
+	width: auto !important;
 	max-width: max-content;
+	float: none !important;
+}
+
+.module-insurance.custom .wrapper .ry-flex .each img {
+	max-width: 200px;
+	max-height: 60px;
 	object-fit: contain;
 }
 
@@ -1085,7 +1084,7 @@
 	width: 100%;
 	height: 100%;
 	background-color: #bd945a;
-	background-image: url(https://s3.amazonaws.com/static.organiclead.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Background_images/blue_cityscape.jpg);
+	background-image: url(../images/ui/blue_cityscape.jpg);
 	background-size: cover;
 	background-position: center;
 	z-index: 0;
@@ -1194,9 +1193,8 @@
 .module-footer.custom .each .title {
 	font-size: 34px;
 	text-transform: uppercase;
-	font-family: 'Jost' !important;
+	font-family: 'Tenor Sans' !important;
 	margin-bottom: 20px;
-	color: rgb(102, 102, 102);
 }
 
 .module-footer.custom .each .details {
@@ -1362,8 +1360,6 @@
 }
 
 .module-43 .ry-container {
-	max-width: 1600px;
-	width: 95%;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -1385,7 +1381,8 @@
 .module-43 .ry-right .ry-menu .nav-menu li .dropdown-menu {
 	padding: 0;
 	margin: 0;
-	/* border-radius: 10px; */
+	background: #18505a;
+	border-radius: 10px;
 }
 
 .module-43 .ry-right .ry-menu .nav-menu li .dropdown-menu li:first-child {
@@ -1428,28 +1425,10 @@
 	vertical-align: middle !important;
 }
 
-.module-43 .ry-right .btn-wrapper .btn-wrap .ry-btn {
-	display: inline-flex !important;
-	align-items: center !important;
-	justify-content: center !important;
-	white-space: nowrap !important;
-	text-decoration: none !important;
-	border: none !important;
-	cursor: pointer !important;
-	transition: all 0.3s ease !important;
-	height: 45px !important;
-	min-height: 45px !important;
-	max-height: 45px !important;
-	line-height: 1.2 !important;
-	text-align: center !important;
-	vertical-align: middle !important;
-	padding: 10px 18px !important;
-	font-size: 15px !important;
-	font-weight: 400 !important;
-	font-family: 'Jost' !important;
-	border-radius: 5px !important;
+.module-43 .ry-right .btn-wrapper .ry-btn {
 	text-transform: initial !important;
-	letter-spacing: initial !important;
+	letter-spacing: initial;
+	font-size: 18px;
 }
 
 .module-43 .ry-right .btn-wrapper .ry-btn-primary:not(:hover) {
@@ -1528,7 +1507,7 @@
 	}
 
 	.module-43 .ry-container {
-		width: 98%;
+		max-width: 98%;
 	}
 
 	.module-43 .ry-right .btn-wrapper {
@@ -1634,7 +1613,7 @@
 
 .module-43 .ry-logo img {
 	height: auto !important;
-	max-height: 100px !important;
+	max-height: 83px !important;
 	width: auto !important;
 	border: none !important;
 	outline: none !important;
@@ -1649,7 +1628,7 @@
 
 .module-43 .ry-right .ry-menu .nav-menu li .dropdown-menu li a {
 	line-height: 1 !important;
-	padding: 14px 30px !important;
+	padding: 14px 20px !important;
 }
 
 .module-43 .ry-right .ry-menu .nav-menu li .dropdown-menu li a:hover,
@@ -1708,16 +1687,14 @@
 
 #ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title,
 #ry-pg-banner .ry-bnr-wrp .ry-pg-title h1 {
-	font-size: 60px;
+	font-size: 60px !important;
 	font-weight: 400 !important;
-	letter-spacing: initial;
-	font-family: 'Jost' !important;
+	letter-spacing: initial !important;
+	font-family: 'Tenor Sans' !important;
 	max-width: 70%;
 	line-height: 1;
 	padding: 0 !important;
-	margin: 0 auto !important;
-	color: #fff;
-	text-transform: uppercase;
+	margin: 0 !important;
 }
 
 #ry-pg-banner .ry-bnr-wrp img {
@@ -1850,7 +1827,7 @@
 	max-width: 620px;
 	padding: 60px 5%;
 	gap: 30px;
-	background-image: url(https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/team_bg.jpg);
+	background-image: url(../images/homepage/team_bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background: #fff;
@@ -1913,6 +1890,27 @@
 	width: calc(100% - 460px);
 }
 
+#ry-pg-content .team-custom-v2 .ry-text h3 {
+	margin: 0 !important;
+	font-size: 36px !important;
+	font-family: 'Tenor Sans' !important;
+	color: #18505a;
+}
+
+#ry-pg-content .team-custom-v2 .ry-text h5 {
+	margin: 0 !important;
+	margin-bottom: 20px !important;
+	margin-top: 10px !important;
+	text-transform: uppercase;
+	font-weight: 300 !important;
+	font-size: 20px !important;
+}
+
+#ry-pg-content .team-custom-v2 .ry-text h4 {
+	margin: 0 !important;
+	color: #bd945a !important;
+}
+
 .module-43 .ry-right .ry-menu .nav-menu li .dropdown-menu li a:hover {
 	color: #fff !important;
 }
@@ -1951,7 +1949,7 @@
 }
 
 .ry-menu .ry-nav li.dropdown .dropdown-menu.hover {
-	top: 40px !important;
+	top: 30px !important;
 }
 
 .inner-careers .ry-container {
@@ -2084,7 +2082,7 @@
 	transition: 400ms ease;
 	background: #fff;
 	height: 145px;
-	background-image: url('https://www.svgrepo.com/show/9488/cloud-upload-signal.svg');
+	background-image: url('../images/ui/cloud-upload-signal.svg');
 	background-repeat: no-repeat;
 	background-position: top 18px center;
 	background-size: 7%;
@@ -2256,7 +2254,7 @@
 }
 
 .library-template {
-	background-image: url(https://s3.amazonaws.com/static.organiclead.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/imgi_50_wwf_bg_pattern_repeat_new.png);
+	background-image: url(../images/homepage/imgi_50_wwf_bg_pattern_repeat_new.png);
 }
 
 .library-template .ry-container {
@@ -2441,8 +2439,8 @@
 }
 
 .module-43.fixed #litlleLogo img {
-	max-width: 200px !important;
-	max-height: 200px !important;
+	max-width: 140px !important;
+	max-height: 140px !important;
 	width: auto !important;
 	height: auto !important;
 	border: none !important;
@@ -2463,8 +2461,7 @@
 }
 
 .module-43.fixed .ry-container {
-	max-width: 1600px;
-	width: 95%;
+	max-width: 95%;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -2512,7 +2509,7 @@
 }
 
 .module-43 .ry-left img {
-	max-height: 100px !important;
+	max-height: 83px !important;
 	margin: 0 !important;
 	height: auto !important;
 	width: auto !important;
@@ -2527,7 +2524,7 @@
 }
 
 .inner-careers {
-	background-image: url(https://s3.amazonaws.com/static.organiclead.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/imgi_50_wwf_bg_pattern_repeat_new.png);
+	background-image: url(../images/homepage/imgi_50_wwf_bg_pattern_repeat_new.png);
 }
 
 .inner-team-page .module-team.custom {
@@ -2544,7 +2541,7 @@
 .custom-form-v2 .form-wrapper {
 	padding: 100px 60px;
 	width: 60%;
-	background-image: url(https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/welcome_bg.png);
+	background-image: url(../images/homepage/welcome_bg.png);
 	background-size: cover;
 	background-position: top;
 }
@@ -2617,7 +2614,7 @@
 }
 
 .blog-custom-template {
-	background-image: url(https://s3.amazonaws.com/static.organiclead.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/imgi_50_wwf_bg_pattern_repeat_new.png);
+	background-image: url(../images/homepage/imgi_50_wwf_bg_pattern_repeat_new.png);
 }
 
 .blog-inner-template .wrapper .photo:before {
@@ -2979,12 +2976,57 @@
 	.module-hero .hero-text h1,
 	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title,
 	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1 {
-		font-size: 56px;
+		font-size: 56px !important;
+	}
+
+	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title,
+	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1 {
+		max-width: 100%;
+		color: #18505a !important;
+	}
+
+	.module-hero .hero-text h1 {
+		color: #fff !important;
 	}
 
 	.module-hero .hero-text h1 span {
 		font-size: 22px;
 		margin-top: 10px;
+	}
+
+	.hero-insurance-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 15px;
+		margin-top: 10px;
+	}
+
+	.hero-insurance-logos {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		padding: 15px 50px;
+		border-radius: 100px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.hero-logo-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-logo-item img {
+		height: 30px !important;
+		width: auto !important;
+		filter: brightness(0) invert(1);
+		opacity: 0.8;
+		transition: all 0.3s ease;
 	}
 
 	.module-cta.custom .ry-flex {
@@ -3004,14 +3046,141 @@
 		letter-spacing: 3px;
 	}
 
+	.module-locations.custom .ry-headline h2 {
+		font-size: 52px !important;
+	}
 
+	.module-welcome.custom {
+		padding-top: 100px;
+	}
+
+	.module-offer {
+		padding-top: 100px;
+		padding-bottom: 320px;
+	}
+
+	.module-offer .group-block .content .each.each-text {
+		padding-left: 30px;
+	}
+
+	.module-offer .group-block .block:nth-child(2n) .content .each.each-text {
+		padding-right: 30px;
+	}
+
+	.module-cta.custom.v2 {
+		padding-top: 100px;
+	}
+
+	.module-cta.custom.v2 .background-wrapper {
+		padding: 100px 0 160px;
+	}
+
+	.module-cta.custom.v2 .content .wrapper-wwb {
+		flex-direction: column-reverse;
+	}
+
+	.module-cta.custom.v2 .ry-flex {
+		width: 100%;
+	}
+
+	.module-cta.custom.v2 .wrapper-wwb .photo {
+		width: 100%;
+		padding-bottom: 56.25%;
+		border-radius: 40px;
+	}
+
+	/* CSS horizontal scroll carousel for mobile (replaces Slick) */
 	.module-services.custom .ry-flex {
-		display: initial;
-		gap: unset;
+		display: flex !important;
+		flex-wrap: nowrap !important;
+		overflow-x: auto !important;
+		overflow-y: hidden !important;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		scroll-behavior: smooth;
+		gap: 15px !important;
+		padding-top: 60px;
+		padding-bottom: 30px;
+		padding-left: 20px;
+		padding-right: 20px;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		justify-content: flex-start !important;
+	}
+
+	.module-services.custom .ry-flex::-webkit-scrollbar {
+		display: none;
 	}
 
 	.module-services.custom .ry-flex .each {
-		width: initial;
+		flex: 0 0 250px !important;
+		width: 250px !important;
+		min-width: 250px;
+		max-width: 250px;
+		scroll-snap-align: center;
+		float: none !important;
+		padding: 0 !important;
+	}
+
+	/* Carousel navigation: arrows */
+	.services-carousel-nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		margin-top: 10px;
+		padding-bottom: 20px;
+		clear: both;
+		position: relative;
+		z-index: 10;
+		width: 100%;
+	}
+
+	.services-carousel-nav .carousel-arrow {
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		border: 2px solid #fff;
+		background: transparent;
+		color: #fff;
+		font-size: 18px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.services-carousel-nav .carousel-arrow:hover,
+	.services-carousel-nav .carousel-arrow:active {
+		background: #bd945a;
+		border-color: #bd945a;
+	}
+
+	/* Carousel navigation: dots */
+	.services-carousel-dots {
+		display: flex;
+		gap: 6px;
+		align-items: center;
+	}
+
+	.services-carousel-dots .dot {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: rgba(255,255,255,0.4);
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.services-carousel-dots .dot.active {
+		width: 40px;
+		border-radius: 6px;
+		background: #bd945a;
 	}
 
 	.module-faq .faq-wrapper .ry-heading {
@@ -3132,7 +3301,26 @@
 		text-align: center;
 	}
 
-	/* Footer bottom responsive styles already defined in @media (max-width: 991px) above */
+	.footer-bottom .content {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0;
+	}
+
+	.footer-bottom .content * {
+		text-align: center;
+	}
+
+	.footer-bottom .content .powered {
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+	}
+
+	.module-services.custom .ry-flex .each .wrapper .service-title div {
+		font-size: 22px;
+	}
 
 	#menu_container .mm-listview li a {
 		font-size: 18px;
@@ -3204,14 +3392,6 @@
 		background: #fff;
 	}
 
-	.module-services.custom .ry-flex .each {
-		margin: 0 15px;
-	}
-
-	.module-services.custom .ry-flex .slick-list {
-		margin: 0 -15px;
-	}
-
 	.module-services.custom .ry-flex .each .wrapper {
 		display: flex;
 		flex-direction: column;
@@ -3280,8 +3460,52 @@
 @media (max-width: 768px) {
 
 	/** PLACE YOUR TABLET AND UP CSS HERE **/
+
+	.module-offer .group-block .content {
+		flex-direction: column !important;
+		gap: 30px;
+	}
+
+	.module-offer .group-block .content .each {
+		width: 100%;
+	}
+
+	.module-offer .group-block .content .each.each-text div br {
+		display: none;
+	}
+
+	.module-offer .group-block .content .each.each-text {
+		padding: 0 !important;
+	}
+
+	.module-offer .group-block .content .each.each-text * {
+		text-align: center !important;
+	}
+
+	.module-offer .group-block .content .each.each-text .ry-btn {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.module-offer.inner-condition-template .group-block .content .each.each-text div br {
 		display: inline;
+	}
+
+	.module-locations.custom .ry-headline h2 {
+		font-size: 42px !important;
+	}
+
+	.hero-insurance-logos {
+		flex-wrap: wrap;
+		border-radius: 30px;
+		padding: 20px;
+		gap: 20px 30px;
+		max-width: 320px;
+		justify-content: center;
+	}
+
+	.hero-logo-item img {
+		height: 25px !important;
 	}
 
 	#ry-pg-banner .ry-bnr-wrp {
@@ -3472,7 +3696,7 @@
 	.module-hero .hero-text h1,
 	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title,
 	#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1 {
-		font-size: 40px;
+		font-size: 40px !important;
 	}
 
 	.module-hero .hero-text {
@@ -3492,6 +3716,43 @@
 
 	.ry-headline h2 {
 		font-size: 38px;
+	}
+
+	.module-team.custom .ry-headline h2,
+	.module-appointment.custom .ry-container .ry-headline h2 {
+		font-size: 38px !important;
+	}
+
+	/* Footer first column: center logo + socials on mobile */
+	.module-footer.custom .each.each-1,
+	.module-footer.custom .each.each-1 .wrapper,
+	.module-footer.custom .each.each-1 .photo {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		float: none !important;
+	}
+
+	.module-footer.custom .each.each-1 .wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.module-footer.custom .each.each-1 .photo {
+		display: flex;
+		justify-content: center;
+		width: auto !important;
+	}
+
+	.module-footer.custom .each.each-1 .photo img {
+		max-width: 200px;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	.module-footer.custom .each.each-1 .custom-socmed {
+		justify-content: center;
+		width: 100%;
 	}
 
 	.ry-headline h5 {
@@ -3524,6 +3785,54 @@
 		text-align: left;
 	}
 
+	.module-offer .group-block .content .each.each-text .ry-text p {
+		font-size: 16px;
+	}
+
+	.module-offer .group-block .content .each.each-text h2 {
+		font-size: 32px;
+	}
+
+	.module-offer.inner-condition-template .group-block .content .each.each-text .ry-text p {
+		font-size: 16px;
+	}
+
+	.module-locations.custom .ry-headline h2 {
+		font-size: 38px !important;
+	}
+
+	.module-services.custom .ry-flex .each .wrapper .service-title div {
+		font-size: 18px;
+	}
+
+	.module-services.custom .ry-flex .each .wrapper .photo {
+		width: 100px;
+		height: 100px;
+	}
+
+	.module-services.custom .ry-flex .each .wrapper .photo img {
+		height: 50px;
+	}
+
+	.module-faq .section-background,
+	.module-cta.custom.v2 .background-wrapper:before {
+		border-bottom-left-radius: 100px;
+		border-top-right-radius: 100px;
+	}
+
+	.module-cta.custom.v2 {
+		padding-top: 60px;
+	}
+
+	.module-cta.custom.v2 .ry-flex .each {
+		width: 100%;
+	}
+
+	.module-cta.custom.v2 .background-wrapper::before {
+		border-bottom-left-radius: 180px !important;
+		background-size: cover;
+		background-position: center;
+	}
 
 	.module-team.custom .ry-flex {
 		gap: 10px;
@@ -3680,7 +3989,7 @@
 		#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title,
 		#ry-pg-banner .ry-bnr-wrp .ry-pg-title h1 {
 			/* letter-spacing: -2px; */
-			font-size: 36px;
+			font-size: 36px !important;
 		}
 
 		.module-apply .ry-flex .each-left .ry-headline h2 {
@@ -3692,52 +4001,25 @@
 			letter-spacing: -2px;
 		}
 
+		.ry-headline h2 {
+			font-size: 36px;
+		}
+
+		.module-locations.custom .ry-headline h2 {
+			font-size: 32px !important;
+		}
+
+		.module-services.custom .ry-flex .each .wrapper .service-title div {
+			font-size: 16px;
+		}
+
 		.module-apply .ry-flex .each-right .wrapper .form-control {
 			height: 60px;
 			border-radius: 30px;
 			font-size: 16px;
 		}
 
-		/* Insurance Logos Styles */
-		.hero-insurance-container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 15px;
-			margin-top: 10px;
-		}
-
-		.hero-insurance-logos {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 40px;
-			background: rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			padding: 15px 50px;
-			border-radius: 100px;
-			border: 1px solid rgba(255, 255, 255, 0.2);
-		}
-
-		.hero-logo-item {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.hero-logo-item img {
-			height: 30px !important;
-			width: auto !important;
-			filter: brightness(0) invert(1);
-			opacity: 0.8;
-			transition: all 0.3s ease;
-		}
-
-		.hero-logo-item img:hover {
-			opacity: 1;
-			transform: scale(1.1);
-		}
+		/* Insurance Logos Styles moved to 1080px breakpoint */
 
 		/* WHAT WE OFFER Section Icon Styling */
 		.module-cta.custom .ry-flex .each .icon {
@@ -3844,8 +4126,7 @@
 }
 
 .module-43.custom-sticky .ry-container {
-	max-width: 1600px;
-	width: 95%;
+	max-width: 95%;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -3898,7 +4179,7 @@
 	border: none !important;
 	outline: none !important;
 	box-shadow: none !important;
-	max-height: 140px !important;
+	max-height: 83px !important;
 	height: auto !important;
 }
 
@@ -4108,7 +4389,7 @@
 
 .module-43 .ry-left img {
 	margin: 0 !important;
-	max-height: 100px !important;
+	max-height: 83px !important;
 	height: auto !important;
 	width: auto !important;
 }
@@ -4243,11 +4524,10 @@
 
 #ry-pg-banner .ry-pg-title h1,
 #ry-pg-banner .ry-pg-title h1.ry-responsive-title {
-	color: #bd945a !important;
-	text-transform: uppercase;
+	font-family: 'Tenor Sans' !important;
 	font-weight: 400 !important;
-	letter-spacing: 5px;
-	margin: 0;
+	letter-spacing: initial !important;
+	margin: 0 !important;
 }
 
 /* ========================================
@@ -4380,6 +4660,25 @@
 		font-size: 25px;
 		letter-spacing: 1px;
 		line-height: 1.1;
+	}
+}
+
+/* ========================================
+   BANNER TITLE CENTERING & HEIGHT OVERRIDES
+   ======================================== */
+
+@media (max-width: 1024px) {
+	#ry-pg-banner .ry-bnr-wrp .ry-pg-title {
+		margin: 0;
+		padding: 30px 0;
+		overflow-wrap: break-word;
+		hyphens: manual;
+	}
+}
+
+@media (max-width: 768px) {
+	#ry-pg-banner .ry-bnr-wrp {
+		height: 320px;
 	}
 }
 

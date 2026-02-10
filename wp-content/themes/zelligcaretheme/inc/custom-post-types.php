@@ -145,6 +145,8 @@ function zelligcare_team_meta_callback($post) {
     wp_nonce_field('zelligcare_team_meta', 'zelligcare_team_nonce');
 
     $position = get_post_meta($post->ID, 'team_position', true);
+    $credentials = get_post_meta($post->ID, 'team_credentials', true);
+    $headshot = get_post_meta($post->ID, 'team_headshot', true);
     $display_homepage = get_post_meta($post->ID, 'team_display_homepage', true);
     $display_order = get_post_meta($post->ID, 'team_display_order', true);
     if (empty($display_order)) {
@@ -157,6 +159,24 @@ function zelligcare_team_meta_callback($post) {
             <td>
                 <input type="text" id="team_position" name="team_position" value="<?php echo esc_attr($position); ?>" class="regular-text">
                 <p class="description">e.g., Operations Manager, Physician Assistant</p>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="team_credentials">Credentials</label></th>
+            <td>
+                <input type="text" id="team_credentials" name="team_credentials" value="<?php echo esc_attr($credentials); ?>" class="regular-text">
+                <p class="description">e.g., PA-C, MD, DO (appears after name)</p>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="team_headshot">Headshot Image URL</label></th>
+            <td>
+                <input type="url" id="team_headshot" name="team_headshot" value="<?php echo esc_url($headshot); ?>" class="regular-text" placeholder="https://...">
+                <button type="button" class="button zelligcare-upload-btn" data-target="team_headshot">Upload Image</button>
+                <p class="description">Alternative to Featured Image. If both are set, this takes priority on single pages.</p>
+                <?php if ($headshot) : ?>
+                <br><img src="<?php echo esc_url($headshot); ?>" style="max-width: 150px; margin-top: 10px;">
+                <?php endif; ?>
             </td>
         </tr>
         <tr>
@@ -192,6 +212,12 @@ function zelligcare_save_team_meta($post_id) {
     if (isset($_POST['team_position'])) {
         update_post_meta($post_id, 'team_position', sanitize_text_field($_POST['team_position']));
     }
+    if (isset($_POST['team_credentials'])) {
+        update_post_meta($post_id, 'team_credentials', sanitize_text_field($_POST['team_credentials']));
+    }
+    if (isset($_POST['team_headshot'])) {
+        update_post_meta($post_id, 'team_headshot', esc_url_raw($_POST['team_headshot']));
+    }
     $display_homepage = isset($_POST['team_display_homepage']) ? '1' : '0';
     update_post_meta($post_id, 'team_display_homepage', $display_homepage);
     if (isset($_POST['team_display_order'])) {
@@ -217,9 +243,14 @@ function zelligcare_specialty_meta_callback($post) {
     wp_nonce_field('zelligcare_specialty_meta', 'zelligcare_specialty_nonce');
 
     $icon_url = get_post_meta($post->ID, 'specialty_icon_url', true);
+    $hero_image = get_post_meta($post->ID, 'specialty_hero_image', true);
     $display_order = get_post_meta($post->ID, 'specialty_display_order', true);
+    $sections = get_post_meta($post->ID, 'specialty_sections', true);
     if (empty($display_order)) {
         $display_order = 0;
+    }
+    if (!is_array($sections)) {
+        $sections = array();
     }
     ?>
     <table class="form-table">
@@ -235,6 +266,17 @@ function zelligcare_specialty_meta_callback($post) {
             </td>
         </tr>
         <tr>
+            <th><label for="specialty_hero_image">Hero/Banner Image URL</label></th>
+            <td>
+                <input type="url" id="specialty_hero_image" name="specialty_hero_image" value="<?php echo esc_url($hero_image); ?>" class="regular-text" placeholder="https://...">
+                <button type="button" class="button zelligcare-upload-btn" data-target="specialty_hero_image">Upload Image</button>
+                <p class="description">Banner image for the single specialty page. Falls back to Featured Image or Customizer default.</p>
+                <?php if ($hero_image) : ?>
+                <br><img src="<?php echo esc_url($hero_image); ?>" style="max-width: 200px; margin-top: 10px;">
+                <?php endif; ?>
+            </td>
+        </tr>
+        <tr>
             <th><label for="specialty_display_order">Display Order</label></th>
             <td>
                 <input type="number" id="specialty_display_order" name="specialty_display_order" value="<?php echo esc_attr($display_order); ?>" class="small-text" min="0">
@@ -242,7 +284,137 @@ function zelligcare_specialty_meta_callback($post) {
             </td>
         </tr>
     </table>
-    <p class="description"><strong>Note:</strong> Use the Featured Image for the specialty image. The post content (editor) is for the specialty description.</p>
+
+    <h3 style="margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px;">Content Sections</h3>
+    <p class="description">Add content sections for the specialty page. Each section alternates layout (image left/right).</p>
+
+    <div id="specialty-sections-list">
+        <?php
+        if (empty($sections)) {
+            zelligcare_render_specialty_section_fields(0, array());
+        } else {
+            foreach ($sections as $index => $section) {
+                zelligcare_render_specialty_section_fields($index, $section);
+            }
+        }
+        ?>
+    </div>
+
+    <p style="margin-top: 15px;">
+        <button type="button" class="button button-primary" id="add-specialty-section">+ Add Section</button>
+    </p>
+
+    <script type="text/template" id="specialty-section-template">
+        <?php zelligcare_render_specialty_section_fields('{{INDEX}}', array()); ?>
+    </script>
+
+    <script>
+    jQuery(document).ready(function($) {
+        var sectionIndex = <?php echo max(count($sections), 1); ?>;
+
+        $('#add-specialty-section').on('click', function() {
+            var template = $('#specialty-section-template').html();
+            template = template.replace(/\{\{INDEX\}\}/g, sectionIndex);
+            $('#specialty-sections-list').append(template);
+            sectionIndex++;
+        });
+
+        $(document).on('click', '.remove-specialty-section', function(e) {
+            e.preventDefault();
+            $(this).closest('.specialty-section-item').remove();
+        });
+
+        $(document).on('click', '.specialty-section-upload-btn', function(e) {
+            e.preventDefault();
+            var button = $(this);
+            var targetInput = button.data('target');
+            var frame = wp.media({
+                title: 'Select Section Image',
+                button: { text: 'Use Image' },
+                multiple: false
+            });
+            frame.on('select', function() {
+                var attachment = frame.state().get('selection').first().toJSON();
+                $('#' + targetInput).val(attachment.url);
+                var preview = button.siblings('.specialty-section-preview');
+                if (preview.length) {
+                    preview.attr('src', attachment.url).show();
+                }
+            });
+            frame.open();
+        });
+    });
+    </script>
+
+    <style>
+    .specialty-section-item {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    .specialty-section-item .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+    .specialty-section-item label { display: block; font-weight: 600; margin-bottom: 5px; }
+    .specialty-section-item input[type="text"],
+    .specialty-section-item input[type="url"],
+    .specialty-section-item textarea { width: 100%; }
+    .specialty-section-item .field-group { margin-bottom: 12px; }
+    .specialty-section-item .remove-specialty-section { color: #a00; cursor: pointer; text-decoration: none; }
+    .specialty-section-item .remove-specialty-section:hover { color: #dc3232; }
+    .specialty-section-preview { max-width: 200px; margin-top: 10px; display: block; }
+    </style>
+    <?php
+}
+
+function zelligcare_render_specialty_section_fields($index, $section) {
+    $title = isset($section['title']) ? $section['title'] : '';
+    $description = isset($section['description']) ? $section['description'] : '';
+    $image = isset($section['image']) ? $section['image'] : '';
+    $section_num = is_numeric($index) ? ($index + 1) : '{{INDEX_PLUS_1}}';
+    ?>
+    <div class="specialty-section-item" data-index="<?php echo esc_attr($index); ?>">
+        <div class="section-header">
+            <h4 style="margin:0;">Section <?php echo esc_html($section_num); ?></h4>
+            <a href="#" class="remove-specialty-section">Remove</a>
+        </div>
+        <div class="field-group">
+            <label for="specialty_section_title_<?php echo esc_attr($index); ?>">Section Title</label>
+            <input type="text"
+                   id="specialty_section_title_<?php echo esc_attr($index); ?>"
+                   name="specialty_sections[<?php echo esc_attr($index); ?>][title]"
+                   value="<?php echo esc_attr($title); ?>"
+                   placeholder="e.g., Understanding Anxiety">
+        </div>
+        <div class="field-group">
+            <label for="specialty_section_desc_<?php echo esc_attr($index); ?>">Section Content</label>
+            <textarea id="specialty_section_desc_<?php echo esc_attr($index); ?>"
+                      name="specialty_sections[<?php echo esc_attr($index); ?>][description]"
+                      rows="6"
+                      placeholder="Section content (HTML supported: <p>, <ul>, <li>, <strong>, etc.)"><?php echo esc_textarea($description); ?></textarea>
+        </div>
+        <div class="field-group">
+            <label for="specialty_section_image_<?php echo esc_attr($index); ?>">Section Image</label>
+            <input type="url"
+                   id="specialty_section_image_<?php echo esc_attr($index); ?>"
+                   name="specialty_sections[<?php echo esc_attr($index); ?>][image]"
+                   value="<?php echo esc_url($image); ?>"
+                   placeholder="https://...">
+            <button type="button" class="button specialty-section-upload-btn" data-target="specialty_section_image_<?php echo esc_attr($index); ?>">Upload Image</button>
+            <?php if ($image) : ?>
+            <img src="<?php echo esc_url($image); ?>" class="specialty-section-preview">
+            <?php else : ?>
+            <img src="" class="specialty-section-preview" style="display:none;">
+            <?php endif; ?>
+        </div>
+    </div>
     <?php
 }
 
@@ -260,8 +432,29 @@ function zelligcare_save_specialty_meta($post_id) {
     if (isset($_POST['specialty_icon_url'])) {
         update_post_meta($post_id, 'specialty_icon_url', esc_url_raw($_POST['specialty_icon_url']));
     }
+    if (isset($_POST['specialty_hero_image'])) {
+        update_post_meta($post_id, 'specialty_hero_image', esc_url_raw($_POST['specialty_hero_image']));
+    }
     if (isset($_POST['specialty_display_order'])) {
         update_post_meta($post_id, 'specialty_display_order', intval($_POST['specialty_display_order']));
+    }
+
+    // Save repeatable sections
+    if (isset($_POST['specialty_sections']) && is_array($_POST['specialty_sections'])) {
+        $sections = array();
+        foreach ($_POST['specialty_sections'] as $section) {
+            if (empty($section['title']) && empty($section['description']) && empty($section['image'])) {
+                continue;
+            }
+            $sections[] = array(
+                'title' => sanitize_text_field($section['title']),
+                'description' => wp_kses_post($section['description']),
+                'image' => esc_url_raw($section['image']),
+            );
+        }
+        update_post_meta($post_id, 'specialty_sections', array_values($sections));
+    } else {
+        delete_post_meta($post_id, 'specialty_sections');
     }
 }
 add_action('save_post_specialty', 'zelligcare_save_specialty_meta');

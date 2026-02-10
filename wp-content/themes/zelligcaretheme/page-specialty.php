@@ -23,7 +23,7 @@ $specialty_name = get_the_title();
             $banner_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
         }
         if (empty($banner_image)) {
-            $banner_image = 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/ib.jpg';
+            $banner_image = get_template_directory_uri() . '/images/homepage/ib.jpg';
         }
         echo esc_url($banner_image); 
     ?>');">
@@ -60,7 +60,7 @@ $specialty_name = get_the_title();
                                     <div class="col-xs-12 col-lg-6 each each-photo">
                                         <div class="col-xs-12 wrapper">
                                             <div class="col-xs-12 photo">
-                                                <img src="https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Condition_Template/anxiety_003.jpg" loading="lazy" alt="<?php echo esc_attr($specialty_name); ?>" class="img-responsive">
+                                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/conditions/anxiety_003.jpg" loading="lazy" alt="<?php echo esc_attr($specialty_name); ?>" class="img-responsive">
                                             </div>
                                         </div>
                                     </div>

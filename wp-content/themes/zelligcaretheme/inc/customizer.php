@@ -41,7 +41,7 @@ function zelligcare_customize_register($wp_customize)
 
     // Logo
     $wp_customize->add_setting('zelligcare_logo', array(
-        'default'           => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/zellig_new_logo.png',
+        'default'           => get_template_directory_uri() . '/images/homepage/zellig_new_logo.png',
         'sanitize_callback' => 'esc_url_raw',
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'zelligcare_logo', array(
@@ -52,7 +52,7 @@ function zelligcare_customize_register($wp_customize)
 
     // Contact Information
     $wp_customize->add_setting('zelligcare_phone', array(
-        'default'           => '(012) 345-6789',
+        'default'           => '(215) 318-1821',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('zelligcare_phone', array(
@@ -62,7 +62,7 @@ function zelligcare_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('zelligcare_phone_display', array(
-        'default'           => '(123) 456-7890',
+        'default'           => '(215) 318-1821',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('zelligcare_phone_display', array(
@@ -72,14 +72,45 @@ function zelligcare_customize_register($wp_customize)
         'description' => 'Different format for footer display (optional)',
     ));
 
+    $wp_customize->add_setting('zelligcare_fax', array(
+        'default'           => '(215) 315-5765',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('zelligcare_fax', array(
+        'label'    => __('Fax Number', 'zelligcare'),
+        'section'  => 'zelligcare_theme_options',
+        'type'     => 'text',
+    ));
+
     $wp_customize->add_setting('zelligcare_email', array(
-        'default'           => 'support@zelligcare.com',
+        'default'           => 'practice@zelligcare.com',
         'sanitize_callback' => 'sanitize_email',
     ));
     $wp_customize->add_control('zelligcare_email', array(
         'label'    => __('Email Address', 'zelligcare'),
         'section'  => 'zelligcare_theme_options',
         'type'     => 'email',
+    ));
+
+    // Address
+    $wp_customize->add_setting('zelligcare_address', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('zelligcare_address', array(
+        'label'    => __('Street Address', 'zelligcare'),
+        'section'  => 'zelligcare_theme_options',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('zelligcare_city_state_zip', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('zelligcare_city_state_zip', array(
+        'label'    => __('City, State ZIP', 'zelligcare'),
+        'section'  => 'zelligcare_theme_options',
+        'type'     => 'text',
     ));
 
     // Social Media Links
@@ -258,6 +289,112 @@ function zelligcare_customize_register($wp_customize)
         'label'    => __('Insurance Section Title', 'zelligcare'),
         'section'  => 'zelligcare_theme_options',
         'type'     => 'text',
+    ));
+
+    // ============================================
+    // DEFAULT BANNER IMAGE
+    // ============================================
+    $wp_customize->add_setting('zelligcare_default_banner', array(
+        'default'           => get_template_directory_uri() . '/images/homepage/ib.jpg',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'zelligcare_default_banner', array(
+        'label'    => __('Default Page Banner Image', 'zelligcare'),
+        'section'  => 'zelligcare_theme_options',
+        'settings' => 'zelligcare_default_banner',
+        'description' => 'Fallback banner image for pages without a featured image',
+    )));
+
+    // ============================================
+    // SIDEBAR CTA SETTINGS
+    // ============================================
+    $wp_customize->add_section('zelligcare_sidebar_cta', array(
+        'title'    => __('Sidebar CTA Cards', 'zelligcare'),
+        'priority' => 35,
+    ));
+
+    // Sidebar CTA 1
+    $wp_customize->add_setting('zelligcare_sidebar_cta1_image', array(
+        'default'           => get_template_directory_uri() . '/images/homepage/sb1.jpg',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'zelligcare_sidebar_cta1_image', array(
+        'label'    => __('CTA Card 1 Image', 'zelligcare'),
+        'section'  => 'zelligcare_sidebar_cta',
+        'settings' => 'zelligcare_sidebar_cta1_image',
+    )));
+
+    $wp_customize->add_setting('zelligcare_sidebar_cta1_title', array(
+        'default'           => 'Services',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('zelligcare_sidebar_cta1_title', array(
+        'label'    => __('CTA Card 1 Title', 'zelligcare'),
+        'section'  => 'zelligcare_sidebar_cta',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('zelligcare_sidebar_cta1_button', array(
+        'default'           => 'Learn More',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('zelligcare_sidebar_cta1_button', array(
+        'label'    => __('CTA Card 1 Button Text', 'zelligcare'),
+        'section'  => 'zelligcare_sidebar_cta',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('zelligcare_sidebar_cta1_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control('zelligcare_sidebar_cta1_url', array(
+        'label'    => __('CTA Card 1 URL', 'zelligcare'),
+        'section'  => 'zelligcare_sidebar_cta',
+        'type'     => 'url',
+        'description' => 'Defaults to /services/ if empty',
+    ));
+
+    // Sidebar CTA 2
+    $wp_customize->add_setting('zelligcare_sidebar_cta2_image', array(
+        'default'           => get_template_directory_uri() . '/images/homepage/sb2.jpg',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'zelligcare_sidebar_cta2_image', array(
+        'label'    => __('CTA Card 2 Image', 'zelligcare'),
+        'section'  => 'zelligcare_sidebar_cta',
+        'settings' => 'zelligcare_sidebar_cta2_image',
+    )));
+
+    $wp_customize->add_setting('zelligcare_sidebar_cta2_title', array(
+        'default'           => 'Keep In Touch',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('zelligcare_sidebar_cta2_title', array(
+        'label'    => __('CTA Card 2 Title', 'zelligcare'),
+        'section'  => 'zelligcare_sidebar_cta',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('zelligcare_sidebar_cta2_button', array(
+        'default'           => 'Contact Us',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('zelligcare_sidebar_cta2_button', array(
+        'label'    => __('CTA Card 2 Button Text', 'zelligcare'),
+        'section'  => 'zelligcare_sidebar_cta',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_setting('zelligcare_sidebar_cta2_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control('zelligcare_sidebar_cta2_url', array(
+        'label'    => __('CTA Card 2 URL', 'zelligcare'),
+        'section'  => 'zelligcare_sidebar_cta',
+        'type'     => 'url',
+        'description' => 'Defaults to /contact-us/ if empty',
     ));
 }
 

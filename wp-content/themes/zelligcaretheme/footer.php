@@ -5,96 +5,12 @@
  * @package ZelligCare
  */
 ?>
-    <style>
-        /* Footer Bottom Styles - Matching zelligcare.com/styles/overrides.css */
-        .footer-bottom {
-            padding: 30px 0;
-            background: #fff;
-        }
-        .footer-top .ry-container, .footer-bottom .ry-container {
-            max-width: 1280px;
-            width: 90%;
-        }
-        .footer-bottom .content {
-            display: flex;
-            gap: 10px;
-            justify-content: space-between;
-        }
-        .footer-bottom .content .ry-left, .footer-bottom .content .ry-right {
-            max-width: max-content;
-            width: auto;
-        }
-        .footer-bottom .content * {
-            font-size: 16px;
-            color: #666;
-            text-transform: uppercase;
-        }
-        .footer-bottom .content .powered {
-            display: flex;
-            gap: 10px;
-        }
-        .footer-bottom .content .powered img {
-            max-width: max-content;
-            object-fit: contain;
-        }
-        @media (max-width: 575px) {
-            .footer-bottom {
-                padding: 20px 0;
-            }
-            .footer-bottom .ry-container {
-                width: 95%;
-            }
-            .footer-bottom .content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 15px;
-            }
-            .footer-bottom .content .ry-left,
-            .footer-bottom .content .ry-right {
-                width: 100%;
-                text-align: center;
-            }
-            .footer-bottom .content .ry-left p {
-                font-size: 14px;
-                line-height: 1.6;
-            }
-            .footer-bottom .content .ry-left .span-2 {
-                display: block;
-                margin-bottom: 8px;
-                margin-right: 0;
-            }
-            .footer-bottom .content .ry-left a {
-                display: inline-block;
-                margin: 0 3px;
-                font-size: 14px;
-                word-break: break-word;
-                line-height: 1.8;
-            }
-            .footer-bottom .content .ry-right {
-                margin-top: 5px;
-            }
-            .footer-bottom .content .powered {
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-            }
-            .footer-bottom .content .powered p {
-                font-size: 14px;
-                margin-bottom: 5px;
-            }
-            .footer-bottom .content .powered img {
-                max-width: 100px;
-            }
-        }
-    </style>
     <div id="ry-footer">
         <div class="col-xs-12">
             <div class="col-xs-12 module-footer custom">
                 <div class="col-xs-12 section-background">
                     <img
-                        src="https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/footer_bg.jpg"
+                        src="<?php echo esc_url(get_template_directory_uri()); ?>/images/homepage/footer_bg.jpg"
                         loading="lazy"
                         alt
                         class="img-responsive"
@@ -174,14 +90,6 @@
                                         </div>
                                         <div class="col-xs-12 details">
                                             <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 640">
-                                                    <path d="M224 128L224 208L288 208L288 128L434.7 128L480 173.3L480 208L544 208L544 173.3C544 156.3 537.3 140 525.3 128L480 82.7C468 70.7 451.7 64 434.7 64L288 64C252.7 64 224 92.7 224 128zM96 192C78.3 192 64 206.3 64 224L64 512C64 529.7 78.3 544 96 544L144 544C161.7 544 176 529.7 176 512L176 224C176 206.3 161.7 192 144 192L96 192zM544 256L224 256L224 512C224 529.7 238.3 544 256 544L544 544C561.7 544 576 529.7 576 512L576 288C576 270.3 561.7 256 544 256zM288 352C288 338.7 298.7 328 312 328C325.3 328 336 338.7 336 352C336 365.3 325.3 376 312 376C298.7 376 288 365.3 288 352zM288 448C288 434.7 298.7 424 312 424C325.3 424 336 434.7 336 448C336 461.3 325.3 472 312 472C298.7 472 288 461.3 288 448zM400 328C413.3 328 424 338.7 424 352C424 365.3 413.3 376 400 376C386.7 376 376 365.3 376 352C376 338.7 386.7 328 400 328zM376 448C376 434.7 386.7 424 400 424C413.3 424 424 434.7 424 448C424 461.3 413.3 472 400 472C386.7 472 376 461.3 376 448zM488 328C501.3 328 512 338.7 512 352C512 365.3 501.3 376 488 376C474.7 376 464 365.3 464 352C464 338.7 474.7 328 488 328zM464 448C464 434.7 474.7 424 488 424C501.3 424 512 434.7 512 448C512 461.3 501.3 472 488 472C474.7 472 464 461.3 464 448z"></path>
-                                                </svg>
-                                            </div>
-                                            <div class="text phone"><?php echo esc_html($phone_display); ?></div>
-                                        </div>
-                                        <div class="col-xs-12 details">
-                                            <div class="icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewbox="0 0 16 16">
                                                     <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"></path>
                                                 </svg>
@@ -191,7 +99,7 @@
                                                 <a
                                                     href="mailto:<?php echo esc_attr($email); ?>"
                                                     target="_self"
-                                                >Send Us A Message</a>
+                                                ><?php echo esc_html($email); ?></a>
                                             </div>
                                         </div>
                                     </div>
@@ -247,64 +155,12 @@
                                 <div class="theme_special_text_color">
                                     <p>
                                         <span class="span-2">&copy; <?php echo date('Y'); ?> Zellig. All rights Reserved. </span>
-                                        <a
-                                            data-cke-saved-href="<?php echo esc_url(home_url('/accessibility-statement/')); ?>"
-                                            href="<?php echo esc_url(home_url('/accessibility-statement/')); ?>"
-                                            data-toggle-value
-                                            data-toggle-default-visible="false"
-                                            data-toggle-show-animation
-                                            data-toggle-hide-animation
-                                            data-toggle-show-animation-options="{}"
-                                            data-toggle-hide-animation-options="{}"
-                                            id
-                                            class
-                                            target="_self"
-                                        >Accessibility Statement</a>
+                                        <a href="<?php echo esc_url(home_url('/accessibility-statement/')); ?>">Accessibility Statement</a>
                                         -
-                                        <a
-                                            data-cke-saved-href="#"
-                                            href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"
-                                            data-toggle-value
-                                            data-toggle-default-visible="false"
-                                            data-toggle-show-animation
-                                            data-toggle-hide-animation
-                                            data-toggle-show-animation-options="{}"
-                                            data-toggle-hide-animation-options="{}"
-                                            id
-                                            class
-                                            target="_self"
-                                        >Privacy Policy</a>
+                                        <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>">Privacy Policy</a>
                                         -
-                                        <a
-                                            data-cke-saved-href="<?php echo esc_url(home_url('/sitemap/')); ?>"
-                                            href="<?php echo esc_url(home_url('/sitemap/')); ?>"
-                                            data-toggle-value
-                                            data-toggle-default-visible="false"
-                                            data-toggle-show-animation
-                                            data-toggle-hide-animation
-                                            data-toggle-show-animation-options="{}"
-                                            data-toggle-hide-animation-options="{}"
-                                            id
-                                            class
-                                            target="_self"
-                                        >Sitemap</a>
+                                        <a href="<?php echo esc_url(home_url('/sitemap/')); ?>">Sitemap</a>
                                     </p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ry-right">
-                                <div class="col-xs-12 nopadding powered">
-                                    <div>
-                                        <p>Powered by:</p>
-                                    </div>
-                                    <img
-                                        src="https://static.royacdn.com/Site-2ee61591-bd3f-4b94-8583-7fc4d52f01b0/index_img/roya_logo_2017_small.png"
-                                        loading="lazy"
-                                        title="Roya"
-                                        alt
-                                        class="img-responsive"
-                                        data-url="http://www.roya.com/?utm_source=zelligcare.com&utm_campaign=poweredby"
-                                        data-target="_blank"
-                                    />
                                 </div>
                             </div>
                         </div>

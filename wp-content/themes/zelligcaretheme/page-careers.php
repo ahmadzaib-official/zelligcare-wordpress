@@ -5,34 +5,10 @@
  * Custom page template for the Careers page
  */
 
-get_header(); ?>
+get_header();
 
-<div id="ry-pg-banner">
-    <div class="col-xs-12 ry-bnr-wrp ry-el-bg" style="background-image: url('<?php 
-        // Check if ACF is available, otherwise use featured image or default
-        if (function_exists('get_field')) {
-            $banner_image = get_field('banner_image');
-        }
-        if (empty($banner_image)) {
-            $banner_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-        }
-        if (empty($banner_image)) {
-            $banner_image = 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/ib.jpg';
-        }
-        echo esc_url($banner_image); 
-    ?>');">
-        <div class="col-xs-12 ">
-            <img src="<?php echo esc_url($banner_image); ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" class="img-responsive">
-        </div>
-    </div>
-    <div class="col-xs-12 ry-pg-title">
-        <div class="col-xs-12 ry-container">
-            <div>
-                <h1 class="ry-responsive-title">Practice With Purpose</h1>
-            </div>
-        </div>
-    </div>
-</div>
+get_template_part('template-parts/page-banner');
+?>
 
 <div id="ry-pg-content" style="display: block !important; visibility: visible !important;">
     <div id="ry-pg-body" class="col-xs-12 inner-careers" style="display: block !important; visibility: visible !important;">
@@ -70,12 +46,12 @@ get_header(); ?>
                         if (!is_array($benefits) || empty($benefits)) {
                             // Default benefits if none set
                             $benefits = array(
-                                array('title' => 'Transparent, Market-Leading Pay', 'content' => 'We believe in paying clinicians fairly and transparently. Our compensation is among the best in the field, with options for 1099 contracts or W2 roles with a comprehensive benefits package.', 'icon' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Careers_Page/icon1.png'),
-                                array('title' => 'A Supportive, Tech-Forward Practice', 'content' => 'Administrative burdens are kept off your plate. Our systems—from an award-winning EMR with AI scribe to thoughtfully designed workflows—are built to make your work smoother.', 'icon' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Careers_Page/icon2.png'),
-                                array('title' => 'Unmatched Career Development', 'content' => 'At Zellig, professional growth isn\'t an afterthought. Newer providers are paired with experienced mentors. Teaching, writing, and leadership opportunities are encouraged and supported at every stage.', 'icon' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Careers_Page/icon3.png'),
-                                array('title' => 'Mission-Driven Work', 'content' => 'We are deeply committed to making mental health care more equitable. Through our pro bono program, clinicians are paid while providing low-cost or free care to patients who need it most. Advocacy for causes that matter isn\'t just allowed—it\'s part of who we are.', 'icon' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Careers_Page/icon4.png'),
-                                array('title' => 'A Connected Team, Even From Afar', 'content' => 'Because we spend so much of our lives at work, we believe that genuine connection matters. At Zellig, community isn\'t mandatory—but it\'s thoughtfully supported. From group chats and case discussions to optional meetups and shared projects, we make it easy to build meaningful relationships with your peers.', 'icon' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Careers_Page/icon_5_new.png'),
-                                array('title' => 'Autonomy with Support', 'content' => 'You bring the expertise—we trust you to use it. At Zellig, clinicians have the freedom to craft individualized care plans while still having access to collaborative support when they need it.', 'icon' => 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Careers_Page/icon6.png'),
+                                array('title' => 'Transparent, Market-Leading Pay', 'content' => 'We believe in paying clinicians fairly and transparently. Our compensation is among the best in the field, with options for 1099 contracts or W2 roles with a comprehensive benefits package.', 'icon' => get_template_directory_uri() . '/images/careers/icon1.png'),
+                                array('title' => 'A Supportive, Tech-Forward Practice', 'content' => 'Administrative burdens are kept off your plate. Our systems—from an award-winning EMR with AI scribe to thoughtfully designed workflows—are built to make your work smoother.', 'icon' => get_template_directory_uri() . '/images/careers/icon2.png'),
+                                array('title' => 'Unmatched Career Development', 'content' => 'At Zellig, professional growth isn\'t an afterthought. Newer providers are paired with experienced mentors. Teaching, writing, and leadership opportunities are encouraged and supported at every stage.', 'icon' => get_template_directory_uri() . '/images/careers/icon3.png'),
+                                array('title' => 'Mission-Driven Work', 'content' => 'We are deeply committed to making mental health care more equitable. Through our pro bono program, clinicians are paid while providing low-cost or free care to patients who need it most. Advocacy for causes that matter isn\'t just allowed—it\'s part of who we are.', 'icon' => get_template_directory_uri() . '/images/careers/icon4.png'),
+                                array('title' => 'A Connected Team, Even From Afar', 'content' => 'Because we spend so much of our lives at work, we believe that genuine connection matters. At Zellig, community isn\'t mandatory—but it\'s thoughtfully supported. From group chats and case discussions to optional meetups and shared projects, we make it easy to build meaningful relationships with your peers.', 'icon' => get_template_directory_uri() . '/images/careers/icon_5_new.png'),
+                                array('title' => 'Autonomy with Support', 'content' => 'You bring the expertise—we trust you to use it. At Zellig, clinicians have the freedom to craft individualized care plans while still having access to collaborative support when they need it.', 'icon' => get_template_directory_uri() . '/images/careers/icon6.png'),
                             );
                         }
                         

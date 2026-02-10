@@ -112,7 +112,7 @@ body.default #ry-section-header.module-43 {
 
 .module-43.fixed #litlleLogo {
   display: block !important;
-  margin-right: 20px;
+  margin-right: 2em;
 }
 
 /* Menu positioning in fixed state */
@@ -146,9 +146,9 @@ body.default #ry-section-header.module-43 {
   left: 0;
   right: 0;
   width: 100%;
-  background: #222;
+  background: #fff;
   z-index: 999;
-  padding: 15px 0;
+  padding: 10px 0;
   -webkit-transition: all 600ms ease;
   transition: all 600ms ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -191,38 +191,21 @@ body.default #ry-section-header.module-43 {
 
 @media (max-width: 1600px) {
   .module-43.fixed .ry-right .btn-wrapper .ry-btn {
-    width: 45px;
-    height: 45px;
-    padding: 0;
-    font-size: 0;
+    font-size: 16px;
+    padding: 13px 15px;
   }
 }
 
 @media (max-width: 1300px) {
   .module-43.fixed .ry-right .btn-wrapper .ry-btn {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    font-size: 0;
-  }
-
-  .module-43.fixed a.ry-btn.ry-btn-primary:before,
-  .module-43.fixed .ry-right a.ry-btn.ry-btn-secondary:before {
-    font-size: 16px !important;
+    font-size: 12px;
+    padding: 10px;
   }
 }
 
 @media (max-width: 1100px) {
   .module-43.fixed .ry-right .btn-wrapper .ry-btn {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    font-size: 0;
-  }
-
-  .module-43.fixed a.ry-btn.ry-btn-primary:before,
-  .module-43.fixed .ry-right a.ry-btn.ry-btn-secondary:before {
-    font-size: 14px !important;
+    font-size: 10px;
   }
 }
 
@@ -265,7 +248,7 @@ body.default #ry-section-header.module-43 {
 
 .module-43.fixed .ry-right .ry-menu .nav-menu li a {
   font-size: 16px;
-  color: #242424 !important;
+  color: #333;
   padding-bottom: 0 !important;
 }
 
@@ -350,7 +333,7 @@ body.default #ry-section-header.module-43 {
 .module-43 .ry-left img {
   max-width: max-content;
   width: 100%;
-  max-height: 100px;
+  max-height: 83px;
   object-fit: contain;
 }
 
@@ -977,25 +960,8 @@ body.default .module-43.fixed {
 
 .module-43.fixed a.ry-btn.ry-btn-primary,
 .module-43.fixed .ry-right a.ry-btn.ry-btn-secondary {
-  padding: 0;
+  padding: 20px;
   transition: none !important;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  overflow: hidden;
-  text-indent: -9999px;
-  font-size: 0;
-  line-height: 0;
-  position: relative;
-  min-width: 45px;
-}
-
-.module-43.fixed a.ry-btn.ry-btn-primary>*,
-.module-43.fixed .ry-right a.ry-btn.ry-btn-secondary>* {
-  display: none;
 }
 
 .module-43.fixed a.ry-btn.ry-btn-primary:hover:before {
@@ -1004,17 +970,12 @@ body.default .module-43.fixed {
 
 .module-43.fixed a.ry-btn.ry-btn-primary:before,
 .module-43.fixed .btn-wrap.order a:before {
-  left: 0;
-  position: absolute;
-  font-size: 18px !important;
+  left: 0px;
+  position: relative;
+  font-size: 16px !important;
   color: #fff;
   font-family: 'FontAwesome';
   margin-right: 0;
-  text-indent: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  text-align: center;
 }
 
 
@@ -1030,15 +991,8 @@ div#litlleLogo img {
 
 .module-43.fixed .ry-right a.ry-btn.ry-btn-secondary:before {
   color: #fff;
-  font-size: 18px;
-  margin-right: 0;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  text-align: center;
-  text-indent: 0;
+  font-size: 16px;
+  margin-right: 1px;
 }
 
 

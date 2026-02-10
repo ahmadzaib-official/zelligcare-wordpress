@@ -61,6 +61,7 @@
               class="col-xs-12 ry-content"
               data-aos-duration="1500"
               data-aos="fade-up"
+              data-aos-offset="0"
             >
               <div class="ry-headline">
                 <h1 style="text-align: center">
@@ -162,7 +163,7 @@
   <div class="col-xs-12 sections">
     <div class="col-xs-12 module-services custom" data-style="Featured Photo">
       <div class="col-xs-12 section-background">
-        <img src="https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/os_bg.png" loading="lazy" alt="" class="img-responsive">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/homepage/os_bg.png" loading="lazy" alt="" class="img-responsive">
       </div>
       <div class="col-xs-12 ry-container">
         <div class="col-xs-12 ry-content">
@@ -174,19 +175,18 @@
             </div>
             <div class="col-xs-12 ry-flex" data-aos-duration="1500" data-aos="fade-up" style="justify-content: center">
               <?php 
-              $specialties = zelligcare_get_specialties();
+              $specialties = zelligcare_get_specialties(8);
               foreach ($specialties as $specialty) :
                 $icon_url = get_post_meta($specialty->ID, 'specialty_icon_url', true);
                 if (empty($icon_url)) {
                   $icon_url = get_the_post_thumbnail_url($specialty->ID, 'full');
                 }
                 if (empty($icon_url)) {
-                  $icon_url = 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/os_icon1.png';
+                  $icon_url = get_template_directory_uri() . '/images/homepage/os_icon1.png';
                 }
-                $specialty_url = get_permalink($specialty->ID);
-                if (empty($specialty_url)) {
-                  $specialty_url = home_url('/' . $specialty->post_name . '/');
-                }
+                // Link to the WP page (e.g. /anxiety/) not the CPT post (/specialties/anxiety/)
+                $page = get_page_by_path($specialty->post_name);
+                $specialty_url = $page ? get_permalink($page->ID) : home_url('/' . $specialty->post_name . '/');
               ?>
               <div class="col-xs-12 col-lg-3 each">
                 <div class="col-xs-12 wrapper">
@@ -205,6 +205,61 @@
               </div>
               <?php endforeach; ?>
             </div>
+            <!-- Mobile carousel nav: arrows + dots -->
+            <div class="services-carousel-nav" aria-label="Specialty carousel navigation">
+              <button class="carousel-arrow carousel-prev" aria-label="Previous">&#10094;</button>
+              <div class="services-carousel-dots">
+                <?php for ($d = 0; $d < count($specialties); $d++) : ?>
+                  <button class="dot<?php echo $d === 0 ? ' active' : ''; ?>" data-index="<?php echo $d; ?>" aria-label="Go to specialty <?php echo $d + 1; ?>"></button>
+                <?php endfor; ?>
+              </div>
+              <button class="carousel-arrow carousel-next" aria-label="Next">&#10095;</button>
+            </div>
+            <script>
+            (function(){
+              var track = document.querySelector('.module-services.custom .ry-flex');
+              if (!track) return;
+              var items = track.querySelectorAll('.each');
+              var dots = document.querySelectorAll('.services-carousel-dots .dot');
+              var prevBtn = document.querySelector('.carousel-prev');
+              var nextBtn = document.querySelector('.carousel-next');
+              if (!items.length) return;
+
+              function getCardWidth() {
+                return items[0].offsetWidth + 15; /* card width + gap */
+              }
+
+              prevBtn.addEventListener('click', function() {
+                track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+              });
+              nextBtn.addEventListener('click', function() {
+                track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+              });
+
+              dots.forEach(function(dot) {
+                dot.addEventListener('click', function() {
+                  var idx = parseInt(this.getAttribute('data-index'));
+                  items[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                });
+              });
+
+              function updateDots() {
+                var scrollLeft = track.scrollLeft;
+                var cardW = getCardWidth();
+                var active = Math.round(scrollLeft / cardW);
+                active = Math.max(0, Math.min(active, items.length - 1));
+                dots.forEach(function(d, i) {
+                  d.classList.toggle('active', i === active);
+                });
+              }
+
+              var scrollTimer;
+              track.addEventListener('scroll', function() {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(updateDots, 80);
+              });
+            })();
+            </script>
             <div class="row">
               <div class="col-xs-12 text-center" style="margin-top: 100px; margin-bottom: 20px;">
                 <a href="<?php echo esc_url(zelligcare_get_theme_option('appointment_url', 'https://intakeq.com/new/x25dh0')); ?>" class="hero-cta-badge" target="_blank" title="Intake Form">REQUEST AN APPOINTMENT</a>
@@ -250,7 +305,7 @@
     <div class="col-xs-12 module-team custom">
       <div class="col-xs-12 section-background">
         <img
-          src="https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/team_bg.jpg"
+          src="<?php echo esc_url(get_template_directory_uri()); ?>/images/homepage/team_bg.jpg"
           loading="lazy"
           alt
           class="img-responsive"
@@ -272,9 +327,12 @@
               $animations = array('fade-right', 'fade-left');
               foreach ($team_members as $index => $member) :
                 $position = get_post_meta($member->ID, 'team_position', true);
-                $photo_url = get_the_post_thumbnail_url($member->ID, 'full');
+                $photo_url = get_post_meta($member->ID, 'team_headshot', true);
                 if (empty($photo_url)) {
-                  $photo_url = 'https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/kaye_headshot.png';
+                  $photo_url = get_the_post_thumbnail_url($member->ID, 'full');
+                }
+                if (empty($photo_url)) {
+                  $photo_url = get_template_directory_uri() . '/images/team/kaye_headshot.png';
                 }
                 $member_url = get_permalink($member->ID);
                 if (empty($member_url)) {
@@ -387,7 +445,7 @@
     <div class="col-xs-12 module-appointment custom">
       <div class="col-xs-12 section-background">
         <img
-          src="https://static.royacdn.com/Site-656e9e6e-f19a-4ed1-9c29-85197594446c/Homepage_Assets/getintouch_bg.png"
+          src="<?php echo esc_url(get_template_directory_uri()); ?>/images/homepage/getintouch_bg.png"
           loading="lazy"
           alt
           class="img-responsive"

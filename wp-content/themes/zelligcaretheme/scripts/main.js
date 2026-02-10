@@ -388,6 +388,7 @@ $(function(){
 
 			$('.module-21').themeCarousel();
 
+			if (typeof Swiper !== 'undefined') {
 			var heroSwiper = new Swiper('#swiper-hero', {
 				speed: 400,
 				spaceBetween: 10,
@@ -458,7 +459,8 @@ $(function(){
 						slidesPerGroup: 2,
 					}
 				}
-			});	
+			});
+			} // end Swiper guard
 
 
 		},
@@ -1064,7 +1066,7 @@ $(function(){
 
 	});
 	*/
-	themeSettings.init();
+	try { themeSettings.init(); } catch(e) { console.error('themeSettings.init error:', e); }
 	$('.slide_pointer').click(function () {
 		var slider = $(this).attr('for');
 		$('#'+slider).click();
@@ -1225,7 +1227,8 @@ $(function(){
 	var ctalength = $(".module-cta.style-5 .ry-flex .ry-each .ry-inner-flex .ry-block").length;
 	$('.module-cta.style-5 .ry-flex .ry-each .ry-inner-flex').addClass('cta-count-' +ctalength);
 
-	moduleCTAMobile(".module-services.custom .ry-flex", true, false, 1081);
+	// Slick removed — using CSS scroll-snap carousel instead
+	// moduleCTAMobile(".module-services.custom .ry-flex", true, false, 1081);
 
 	function moduleCTAMobile($slidernameInner, $dotsInner, $arrowsInner, $breakpointInner) {
 		var sliderInner = $($slidernameInner);
