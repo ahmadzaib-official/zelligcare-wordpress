@@ -217,7 +217,8 @@
 }
 
 #ry-pg-banner .ry-pg-title .ry-container {
-	max-width: 95%;
+	width: 95%;
+	max-width: 1300px;
 	margin: 0 auto;
 	padding: 0 20px;
 }
@@ -549,7 +550,7 @@
 	text-transform: uppercase !important;
 	letter-spacing: 2px !important;
 	margin: 0 !important;
-	font-weight: 400 !important;
+	font-weight: 600 !important;
 	line-height: normal !important;
 }
 
@@ -820,19 +821,32 @@
 .module-team.custom .ry-flex .each .title p {
 	text-align: center;
 	line-height: 1;
-	font-size: 30px;
-	font-family: 'Tenor Sans' !important;
 	color: #3e4f5f !important;
+	margin: 0;
+}
+
+.module-team.custom .ry-flex .each .title .team-name {
+	font-size: 24px;
+	font-family: 'Tenor Sans', sans-serif !important;
 	text-transform: uppercase;
 }
 
-.module-team.custom .ry-flex .each .title p span {
+.module-team.custom .ry-flex .each .title .team-position .span-1 {
 	display: block;
-	font-size: 24px;
-	font-family: 'Jost' !important;
+	font-size: 20px;
+	font-family: 'Jost', sans-serif;
 	text-transform: initial;
 	margin-top: 15px;
 	margin-bottom: 30px;
+	color: #3e4f5f;
+}
+
+.module-team.custom .ry-flex .each .title .team-bio {
+	font-size: 18px;
+	font-family: 'Jost', sans-serif;
+	text-transform: none;
+	line-height: 1.5;
+	margin-top: 10px;
 }
 
 .module-team.custom .ry-flex .each .ry-btn {
@@ -1040,10 +1054,8 @@
 }
 
 .module-appointment.custom .ry-container .ry-headline h2 {
-	font-size: 80px !important;
 	text-align: center;
-	font-family: 'Tenor Sans' !important;
-	font-weight: 400 !important;
+	font-size: 62px;
 }
 
 .module-appointment.custom .ry-container .ry-headline h2 span {
@@ -1225,7 +1237,7 @@
 	color: rgb(102, 102, 102);
 	line-height: 1.3;
 	font-family: 'Jost' !important;
-	font-weight: 300;
+	font-weight: 400;
 	text-decoration: none;
 	transition: opacity 0.3s ease;
 }
@@ -1257,12 +1269,11 @@
 }
 
 .module-footer.custom .each .details ul li a {
-	font-size: calc(14px + 1 * ((100vw - 500px) / 1100));
+	font-size: 22px;
 	display: block;
-	line-height: 32px !important;
-	color: rgb(102, 102, 102);
-	font-family: 'Jost' !important;
-	font-weight: 300;
+	line-height: 1 !important;
+	color: #666;
+	font-weight: 400;
 	text-decoration: none;
 	transition: opacity 0.3s ease;
 }
@@ -1703,7 +1714,7 @@
 
 @media (max-width: 1599px) {
 	#ry-pg-banner .ry-bnr-wrp {
-		height: 320px;
+		height: 400px;
 		background-position: 100%;
 	}
 }
@@ -1984,13 +1995,13 @@
 	line-height: 1.5 !important;
 }
 
-.inner-careers .module-cta.custom .ry-flex .each .title h4 {
+#ry-pg-content .inner-careers .module-cta.custom .ry-flex .each .title h4 {
 	color: #3e4f5f !important;
-	font-size: 26px !important;
+	font-size: 22px !important;
 	font-family: Jost !important;
 	font-weight: 600 !important;
 	line-height: 1.2 !important;
-	margin-bottom: 30px !important;
+	margin-bottom: 0 !important;
 	min-height: 93px;
 }
 
@@ -2401,6 +2412,10 @@
 	object-fit: cover;
 }
 
+#ry-pg-body .module-grid-basic .ry-headline h2 {
+	text-transform: capitalize !important;
+}
+
 .ry-payment-options-logos {
 	display: flex;
 	align-items: center;
@@ -2556,7 +2571,7 @@
 .custom-form-v2 .form-wrapper p {
 	line-height: 1.3;
 	margin-top: 5px;
-	/* margin-bottom: 30px; */
+	margin-bottom: 30px;
 }
 
 .custom-form-v2 .form-wrapper .form-control {
@@ -2615,6 +2630,10 @@
 
 .blog-custom-template {
 	background-image: url(../images/homepage/imgi_50_wwf_bg_pattern_repeat_new.png);
+}
+
+#ry-pg-content .each .text .title h4 {
+	font-weight: 600 !important;
 }
 
 .blog-inner-template .wrapper .photo:before {
@@ -2682,6 +2701,11 @@
 
 	.module-cta.custom .ry-flex .each .title h4 {
 		font-size: 22px;
+	}
+
+	.inner-careers .module-cta.custom .ry-flex .each .title h4 {
+		font-size: 22px !important;
+		min-height: 50px;
 	}
 
 	.module-cta.custom .ry-flex .each.each-1 h3 {
@@ -4242,7 +4266,7 @@
 	font-family: 'Jost';
 	font-size: 16px;
 	font-weight: 400;
-	padding: 12px 20px;
+	padding: 12px 30px;
 	border-radius: 5px;
 	text-decoration: none;
 	display: inline-block;
@@ -4453,13 +4477,18 @@
 
 /* Center Submit Button in Get In Touch */
 .module-appointment.custom form .input-wrap#submit {
-	display: flex;
-	justify-content: center;
+	text-align: center;
 	margin-top: 30px;
+}
+
+.module-appointment.custom form .input-wrap#submit .form-group {
+	text-align: center;
 }
 
 .module-appointment.custom form .input-wrap#submit input[type="submit"] {
 	min-width: 250px;
+	display: inline-block;
+	float: none;
 }
 
 /* Team Section CTA Button (Reversed Colors) */
@@ -4518,7 +4547,8 @@
 	padding: 20px 30px;
 	border-radius: 10px;
 	display: inline-block;
-	max-width: 95%;
+	width: 95%;
+	max-width: 1300px;
 	margin: 0 auto;
 }
 

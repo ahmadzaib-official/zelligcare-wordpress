@@ -49,14 +49,12 @@
     display: none;
 }
 
-/* Banner title positioning - title is sibling of ry-bnr-wrp */
+/* Banner title positioning - matches reference site.css */
 #ry-pg-banner .ry-pg-title {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     width: 100%;
-    text-align: center;
     z-index: 10;
     visibility: visible;
     pointer-events: none;
@@ -70,7 +68,6 @@
     line-height: 1 !important;
     padding: 0 !important;
     margin: 0 !important;
-    text-transform: uppercase;
     max-width: 70%;
 }
 
@@ -86,7 +83,7 @@
 
 @media (max-width: 1599px) {
     #ry-pg-banner .ry-bnr-wrp {
-        height: 320px;
+        height: 400px;
         background-position: 100%;
     }
 }

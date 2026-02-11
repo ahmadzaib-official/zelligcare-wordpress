@@ -145,7 +145,7 @@ get_template_part('template-parts/page-banner');
                                             <input type="hidden" name="form_type" value="careers">
                                             
                                             <div class="fieldset">
-                                                <div class="col-xs-12 wrapper">
+                                                <div class="fieldset-inner">
                                                     <!-- Name Field -->
                                                     <div class="col-xs-12 each-field">
                                                         <div class="form-group required" data-validation="^[a-zA-Z0-9 ]+$" data-errormsg="Invalid Input" data-type="text" data-required="true">

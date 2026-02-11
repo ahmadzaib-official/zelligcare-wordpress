@@ -43,7 +43,7 @@ function zelligcare_scripts() {
     wp_enqueue_style('homepage-appointment-style-1', get_template_directory_uri() . '/styles/homepage-appointment-style-1.css');
     wp_enqueue_style('footer-2', get_template_directory_uri() . '/styles/footer-2.css');
     wp_enqueue_style('updates-css', get_template_directory_uri() . '/styles/updates-css.css');
-    wp_enqueue_style('overrides', get_template_directory_uri() . '/styles/overrides.css', array(), '1.7');
+    wp_enqueue_style('overrides', get_template_directory_uri() . '/styles/overrides.css', array(), '1.9');
     // Load site-overrides.css last to ensure footer styles take precedence
     wp_enqueue_style('site-overrides', get_template_directory_uri() . '/css/site-overrides.css', array('overrides'), '1.2');
     wp_enqueue_style('mobile-header', get_template_directory_uri() . '/styles/mobile-header.css');
@@ -181,7 +181,7 @@ function zelligcare_scripts() {
     // Theme-specific scripts
     wp_enqueue_script('zelligcare-dependencies', get_template_directory_uri() . '/scripts/dependencies.js', array('jquery'), null, true);
     wp_enqueue_script('zelligcare-menu', get_template_directory_uri() . '/scripts/menu.js', array('jquery', 'zelligcare-dependencies'), null, true);
-    wp_enqueue_script('zelligcare-main', get_template_directory_uri() . '/scripts/main.js', array('jquery', 'slick-carousel', 'zelligcare-dependencies', 'zelligcare-menu'), '1.4', true);
+    wp_enqueue_script('zelligcare-main', get_template_directory_uri() . '/scripts/main.js', array('jquery', 'slick-carousel', 'zelligcare-dependencies', 'zelligcare-menu'), '1.5', true);
     wp_enqueue_script('zelligcare-slider-pro', get_template_directory_uri() . '/scripts/slider-pro.js', array('jquery'), null, true);
     wp_enqueue_script('zelligcare-masonry', get_template_directory_uri() . '/scripts/masonry.js', array('jquery'), null, true);
     wp_enqueue_script('zelligcare-brands', get_template_directory_uri() . '/scripts/brands.js', array('jquery'), null, true);
@@ -194,10 +194,7 @@ function zelligcare_scripts() {
     wp_enqueue_script('zelligcare-inner-team-style-3', get_template_directory_uri() . '/scripts/inner-team-style-3.js', array('jquery'), null, true);
     
     // Initialize AOS
-    wp_add_inline_script('aos', 'AOS.init({
-        duration: 800,
-        once: true
-    });');
+    wp_add_inline_script('aos', 'window.addEventListener("load", function() { AOS.init(); });');
     
     // Initialize sticky header - ensure it runs after main.js loads
     wp_add_inline_script('zelligcare-main', '
@@ -1565,10 +1562,10 @@ function zelligcare_get_insurance_logos() {
     if (empty($logos)) {
         // Default logos
         return array(
-            get_template_directory_uri() . '/images/insurance/cigna.png',
-            get_template_directory_uri() . '/images/insurance/aetna_logo.png',
-            get_template_directory_uri() . '/images/insurance/bcbs_logo.png',
-            get_template_directory_uri() . '/images/insurance/united.png',
+            get_template_directory_uri() . '/images/insurance/cigna_logo_2.png',
+            get_template_directory_uri() . '/images/insurance/aetna_logo_3.png',
+            get_template_directory_uri() . '/images/insurance/bcbs_logo_3.png',
+            get_template_directory_uri() . '/images/insurance/uh_logo_2.png',
         );
     }
     if (is_string($logos)) {

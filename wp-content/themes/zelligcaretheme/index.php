@@ -355,15 +355,14 @@
                     />
                   </div>
                   <div class="title">
-                    <p><strong><?php echo esc_html($member->post_title); ?></strong></p>
+                    <p class="team-name"><strong><?php echo esc_html($member->post_title); ?></strong></p>
                     <?php if ($position) : ?>
-                    <p>
+                    <p class="team-position">
                       <span class="span-1"><?php echo esc_html($position); ?></span>
                     </p>
                     <?php endif; ?>
-                    <p></p>
-                    <p>
-                      <span><?php echo esc_html(wp_trim_words($member->post_excerpt ? $member->post_excerpt : $member->post_content, 30)); ?></span>
+                    <p class="team-bio">
+                      <?php echo esc_html(wp_trim_words($member->post_excerpt ? $member->post_excerpt : $member->post_content, 30)); ?>
                     </p>
                     <a
                       href="<?php echo esc_url($member_url); ?>"
