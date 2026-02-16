@@ -9,7 +9,7 @@
 }
 
 .mobile-container {
-    padding: 10px 15px;
+    padding: 15px 0;
 }
 
 .menu-wrap {
@@ -172,13 +172,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     background: #bd945a;
     color: #fff;
     text-decoration: none;
     border-radius: 50%;
-    font-size: 16px;
+    font-size: 18px;
     transition: all 0.3s ease;
 }
 
@@ -272,8 +272,8 @@ body.nav-open {
     }
 
     .mobile-button a {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
 }

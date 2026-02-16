@@ -43,7 +43,7 @@ function zelligcare_scripts() {
     wp_enqueue_style('homepage-appointment-style-1', get_template_directory_uri() . '/styles/homepage-appointment-style-1.css');
     wp_enqueue_style('footer-2', get_template_directory_uri() . '/styles/footer-2.css');
     wp_enqueue_style('updates-css', get_template_directory_uri() . '/styles/updates-css.css');
-    wp_enqueue_style('overrides', get_template_directory_uri() . '/styles/overrides.css', array(), '1.9');
+    wp_enqueue_style('overrides', get_template_directory_uri() . '/styles/overrides.css', array(), '2.1');
     // Load site-overrides.css last to ensure footer styles take precedence
     wp_enqueue_style('site-overrides', get_template_directory_uri() . '/css/site-overrides.css', array('overrides'), '1.2');
     wp_enqueue_style('mobile-header', get_template_directory_uri() . '/styles/mobile-header.css');

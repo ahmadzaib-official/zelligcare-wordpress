@@ -49,11 +49,12 @@
     display: none;
 }
 
-/* Banner title positioning - matches reference site.css */
+/* Banner title positioning */
 #ry-pg-banner .ry-pg-title {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     z-index: 10;
     visibility: visible;
@@ -138,7 +139,7 @@
 
 @media screen and (max-width: 500px) {
     #ry-pg-banner .ry-bnr-wrp {
-        height: 200px;
+        height: 275px;
         background-position: 90%;
     }
 

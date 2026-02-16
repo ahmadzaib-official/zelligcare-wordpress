@@ -73,7 +73,7 @@
 
 .module-hero .text-center {
 	position: relative;
-	padding-bottom: calc(100vh - 160px);
+	padding-bottom: 100vh;
 }
 
 .module-hero .text-center img {
@@ -91,7 +91,7 @@
 
 .module-hero .hero-text {
 	position: absolute;
-	bottom: 90px;
+	bottom: 185px;
 }
 
 .module-hero .hero-text h1 {
@@ -760,7 +760,7 @@
 	border-top-left-radius: unset;
 	border-bottom-right-radius: unset;
 	border-top-right-radius: 180px;
-	padding-bottom: 70px;
+	padding-bottom: 130px;
 	border-bottom-left-radius: 80px;
 	overflow: hidden;
 	padding-left: 60px;
@@ -852,6 +852,7 @@
 .module-team.custom .ry-flex .each .ry-btn {
 	margin: 30px auto 0;
 	margin-top: auto;
+	margin-top: 1rem;
 }
 
 .module-team.custom .ry-flex .each {
@@ -1159,11 +1160,14 @@
 	width: 100%;
 }
 
-.module-footer.custom .each.each-1 .photo {
-	margin-bottom: 20px;
+.module-footer.custom .each.each-1 .footer-brand {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
 }
 
-.module-footer.custom .each.each-1 .photo img {
+.module-footer.custom .each.each-1 .footer-brand img {
 	max-width: 100%;
 	height: auto;
 	display: block;
@@ -1687,13 +1691,13 @@
 
 #ry-pg-banner .ry-bnr-wrp .ry-pg-title {
 	position: absolute;
-	bottom: 10%;
-	transform: translateY(-50%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	z-index: 10;
 	/* Increased to ensure visibility above overlays but below header */
 	visibility: visible;
 	width: 100%;
-	left: 0;
 }
 
 #ry-pg-banner .ry-bnr-wrp .ry-pg-title h1.ry-responsive-title,
@@ -1777,7 +1781,7 @@
 
 @media (max-width: 500px) {
 	#ry-pg-banner .ry-bnr-wrp {
-		height: 200px;
+		height: 275px;
 		background-position: 90%;
 	}
 }
@@ -2510,17 +2514,11 @@
 	max-width: 200px;
 }
 
-.module-footer.custom .each.each-1 .wrapper {
+.module-footer.custom .each.each-1 .footer-brand {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-}
-
-.module-footer.custom .each.each-1 .wrapper .photo {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	gap: 20px;
 }
 
 .module-43 .ry-left img {
@@ -3161,25 +3159,7 @@
 	}
 
 	.services-carousel-nav .carousel-arrow {
-		width: 44px;
-		height: 44px;
-		border-radius: 50%;
-		border: 2px solid #fff;
-		background: transparent;
-		color: #fff;
-		font-size: 18px;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: all 0.3s ease;
-		-webkit-tap-highlight-color: transparent;
-	}
-
-	.services-carousel-nav .carousel-arrow:hover,
-	.services-carousel-nav .carousel-arrow:active {
-		background: #bd945a;
-		border-color: #bd945a;
+		display: none;
 	}
 
 	/* Carousel navigation: dots */
@@ -3193,18 +3173,21 @@
 		width: 12px;
 		height: 12px;
 		border-radius: 50%;
-		background: rgba(255,255,255,0.4);
+		background: #000;
+		opacity: 0.5;
 		border: none;
 		padding: 0;
+		min-width: 12px;
 		cursor: pointer;
-		transition: all 0.3s ease;
+		transition: 0.5s;
 		-webkit-tap-highlight-color: transparent;
 	}
 
 	.services-carousel-dots .dot.active {
-		width: 40px;
-		border-radius: 6px;
-		background: #bd945a;
+		width: 50px;
+		border-radius: 5px;
+		opacity: 1;
+		background: #d6a14f;
 	}
 
 	.module-faq .faq-wrapper .ry-heading {
@@ -3242,6 +3225,10 @@
 		max-width: 100%;
 	}
 
+	.module-offer.inner-condition-template .group-block .content .each.each-photo {
+		order: -1;
+	}
+
 	.module-offer.inner-condition-template .group-block .content .each.each-text {
 		padding-left: 0;
 	}
@@ -3259,7 +3246,11 @@
 	}
 
 	.module-team.custom {
-		padding: 280px 0;
+		padding: 100px 0;
+	}
+
+	.module-team.custom .ry-headline h2 {
+		font-size: 52px !important;
 	}
 
 	.module-faq {
@@ -3272,7 +3263,11 @@
 	}
 
 	.module-appointment.custom {
-		padding: 160px 0 200px;
+		padding: 80px 0 120px;
+	}
+
+	#ry-footer > .col-xs-12 {
+		margin-top: -60px;
 	}
 
 	.module-footer.custom .footer-top {
@@ -3287,6 +3282,19 @@
 
 	.module-footer.custom .each {
 		max-width: 280px;
+	}
+
+	.module-footer.custom .each.each-1 {
+		max-width: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		float: none !important;
+		padding: 0;
+	}
+
+	.module-footer.custom .each.each-1 .footer-brand {
+		width: 100%;
 	}
 
 	.module-footer.custom .each .custom-socmed {
@@ -3492,6 +3500,10 @@
 
 	.module-offer .group-block .content .each {
 		width: 100%;
+	}
+
+	.module-offer .group-block .content .each.each-photo {
+		order: -1;
 	}
 
 	.module-offer .group-block .content .each.each-text div br {
@@ -3748,35 +3760,13 @@
 	}
 
 	/* Footer first column: center logo + socials on mobile */
-	.module-footer.custom .each.each-1,
-	.module-footer.custom .each.each-1 .wrapper,
-	.module-footer.custom .each.each-1 .photo {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-		float: none !important;
-	}
-
-	.module-footer.custom .each.each-1 .wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.module-footer.custom .each.each-1 .photo {
+	.module-footer.custom .each.each-1 {
 		display: flex;
 		justify-content: center;
-		width: auto !important;
-	}
-
-	.module-footer.custom .each.each-1 .photo img {
-		max-width: 200px;
-		height: auto;
-		margin: 0 auto;
-	}
-
-	.module-footer.custom .each.each-1 .custom-socmed {
-		justify-content: center;
+		max-width: 100%;
 		width: 100%;
+		padding: 0;
+		float: none !important;
 	}
 
 	.ry-headline h5 {
@@ -4617,7 +4607,7 @@
 
 	#ry-pg-banner .ry-pg-title {
 		top: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateY(-50%);
 	}
 
 	#ry-pg-banner .ry-pg-title h1,
@@ -4637,7 +4627,7 @@
 
 	#ry-pg-banner .ry-pg-title {
 		top: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateY(-50%);
 	}
 
 	#ry-pg-banner .ry-pg-title h1,
@@ -4661,7 +4651,7 @@
 
 	#ry-pg-banner .ry-pg-title {
 		top: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateY(-50%);
 	}
 
 	#ry-pg-banner .ry-pg-title h1,
@@ -4682,7 +4672,7 @@
 
 	#ry-pg-banner .ry-pg-title {
 		top: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateY(-50%);
 	}
 
 	#ry-pg-banner .ry-pg-title h1,
@@ -4771,7 +4761,7 @@
 @media screen and (-ms-high-contrast: active),
 (-ms-high-contrast: none) {
 	#ry-pg-banner .ry-pg-title {
-		transform: translateX(-50%) translateY(0);
+		transform: translateY(-50%);
 	}
 }
 
