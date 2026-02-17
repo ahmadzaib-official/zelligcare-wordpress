@@ -16,9 +16,6 @@ get_template_part('template-parts/page-banner');
             <div><br></div>
             <div class="col-xs-12 ry-content">
                 <div class="col-xs-12 col-md-12 col-lg-12 library-wrapper">
-                    <div data-aos-duration="1500" data-aos="fade-up" class="ry-headline" style="text-align: center; margin-bottom: 60px;">
-                        <h2><?php the_title(); ?></h2>
-                    </div>
                     <div class="col-xs-12 ry-flex">
                         <?php
                         // Query for blog posts

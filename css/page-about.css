@@ -3,51 +3,11 @@
  * Custom styles for the About/Our Practice page
  */
 
-/* Page Banner Styles */
-#ry-pg-banner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-#ry-pg-banner .ry-bnr-wrp {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#ry-pg-banner .ry-bnr-wrp img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Title is now a sibling of ry-bnr-wrp, not inside it */
-#ry-pg-banner .ry-pg-title {
-    visibility: visible;
-    padding: 40px 0;
-    text-align: center;
-}
-
-/* Banner title styling handled by site.css */
-
-@media (max-width: 768px) {
-    #ry-pg-banner .ry-pg-title h1 {
-        font-size: 40px;
-    }
-    
-    #ry-pg-banner .ry-bnr-wrp {
-        height: 300px;
-    }
-}
+@import url('page-specialty-shared.css');
 
 /* Page Content Styles */
 #ry-pg-content {
-    padding: 60px 0;
+    padding: 0;
     background: #fff;
     display: block;
     visibility: visible;
@@ -144,20 +104,12 @@
     }
     
     #ry-pg-content {
-        padding: 40px 0;
+        padding: 0;
     }
 }
 
 @media (max-width: 480px) {
     #ry-pg-body .col-lg-12 > div p {
         font-size: 16px;
-    }
-    
-    #ry-pg-banner .ry-pg-title h1 {
-        font-size: 28px;
-    }
-    
-    #ry-pg-banner .ry-bnr-wrp {
-        height: 250px;
     }
 }

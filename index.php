@@ -61,6 +61,7 @@
               class="col-xs-12 ry-content"
               data-aos-duration="1500"
               data-aos="fade-up"
+              data-aos-offset="0"
             >
               <div class="ry-headline">
                 <h1 style="text-align: center">
@@ -204,6 +205,61 @@
               </div>
               <?php endforeach; ?>
             </div>
+            <!-- Mobile carousel nav: arrows + dots -->
+            <div class="services-carousel-nav" aria-label="Specialty carousel navigation">
+              <button class="carousel-arrow carousel-prev" aria-label="Previous">&#10094;</button>
+              <div class="services-carousel-dots">
+                <?php for ($d = 0; $d < count($specialties); $d++) : ?>
+                  <button class="dot<?php echo $d === 0 ? ' active' : ''; ?>" data-index="<?php echo $d; ?>" aria-label="Go to specialty <?php echo $d + 1; ?>"></button>
+                <?php endfor; ?>
+              </div>
+              <button class="carousel-arrow carousel-next" aria-label="Next">&#10095;</button>
+            </div>
+            <script>
+            (function(){
+              var track = document.querySelector('.module-services.custom .ry-flex');
+              if (!track) return;
+              var items = track.querySelectorAll('.each');
+              var dots = document.querySelectorAll('.services-carousel-dots .dot');
+              var prevBtn = document.querySelector('.carousel-prev');
+              var nextBtn = document.querySelector('.carousel-next');
+              if (!items.length) return;
+
+              function getCardWidth() {
+                return items[0].offsetWidth + 15; /* card width + gap */
+              }
+
+              prevBtn.addEventListener('click', function() {
+                track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+              });
+              nextBtn.addEventListener('click', function() {
+                track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+              });
+
+              dots.forEach(function(dot) {
+                dot.addEventListener('click', function() {
+                  var idx = parseInt(this.getAttribute('data-index'));
+                  items[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                });
+              });
+
+              function updateDots() {
+                var scrollLeft = track.scrollLeft;
+                var cardW = getCardWidth();
+                var active = Math.round(scrollLeft / cardW);
+                active = Math.max(0, Math.min(active, items.length - 1));
+                dots.forEach(function(d, i) {
+                  d.classList.toggle('active', i === active);
+                });
+              }
+
+              var scrollTimer;
+              track.addEventListener('scroll', function() {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(updateDots, 80);
+              });
+            })();
+            </script>
             <div class="row">
               <div class="col-xs-12 text-center" style="margin-top: 100px; margin-bottom: 20px;">
                 <a href="<?php echo esc_url(zelligcare_get_theme_option('appointment_url', 'https://intakeq.com/new/x25dh0')); ?>" class="hero-cta-badge" target="_blank" title="Intake Form">REQUEST AN APPOINTMENT</a>
@@ -216,21 +272,22 @@
   </div>
 </div>
 
-<div id="section-locations" class="col-xs-12">
+<div id="section-locations" class="col-xs-12" data-aos="fade-up" data-aos-duration="1000">
   <div class="col-xs-12 sections" style="background-color: #d1e2e2;">
     <div class="col-xs-12 module-locations custom">
       <div class="col-xs-12 ry-container">
-        <div class="col-xs-12 ry-content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">
-          <div class="ry-headline">
+        <div class="col-xs-12 ry-content">
+          <div class="ry-headline" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
             <h2 style="text-align: center"><?php echo esc_html(zelligcare_get_theme_option('locations_title', 'States We Serve')); ?></h2>
           </div>
-          <div class="row locations-grid">
+          <div class="row locations-grid" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
             <?php 
             $states = zelligcare_get_states_served();
+            $delay = 200; // Initial delay
             foreach ($states as $state) :
             ?>
-            <div class="col-xs-12 col-sm-4 col-sm-offset-4 location-item">
-              <div class="icon">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-4 location-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo $delay; ?>">
+              <div class="icon" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="<?php echo $delay + 100; ?>">
                 <i class="fa-solid fa-location-dot"></i>
               </div>
               <h3><?php echo esc_html($state); ?></h3>
@@ -299,15 +356,14 @@
                     />
                   </div>
                   <div class="title">
-                    <p><strong><?php echo esc_html($member->post_title); ?></strong></p>
+                    <p class="team-name"><strong><?php echo esc_html($member->post_title); ?></strong></p>
                     <?php if ($position) : ?>
-                    <p>
+                    <p class="team-position">
                       <span class="span-1"><?php echo esc_html($position); ?></span>
                     </p>
                     <?php endif; ?>
-                    <p></p>
-                    <p>
-                      <span><?php echo esc_html(wp_trim_words($member->post_excerpt ? $member->post_excerpt : $member->post_content, 30)); ?></span>
+                    <p class="team-bio">
+                      <?php echo esc_html(wp_trim_words($member->post_excerpt ? $member->post_excerpt : $member->post_content, 30)); ?>
                     </p>
                     <a
                       href="<?php echo esc_url($member_url); ?>"
@@ -383,7 +439,7 @@
   </div>
 </div>
 
-<div id="section-appointment" class="col-xs-12">
+<div id="section-appointment" class="col-xs-12" data-aos="fade-up" data-aos-duration="1000">
   <div id="request-appointment" class="col-xs-12 sections">
     <div></div>
     <div class="col-xs-12 module-appointment custom">
@@ -396,17 +452,13 @@
         />
       </div>
       <div class="col-xs-12 ry-container">
-        <div
-          class="col-xs-12 ry-content"
-          data-aos-duration="1500"
-          data-aos="fade-up"
-        >
-          <div class="ry-headline">
+        <div class="col-xs-12 ry-content">
+          <div class="ry-headline" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <h2>
               <span>interested in our services?</span> get in touch
             </h2>
           </div>
-          <div class="col-xs-12 col-lg-12 form-block">
+          <div class="col-xs-12 col-lg-12 form-block" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
             <form
               id="request-appointment-form"
               class="cmsForm"

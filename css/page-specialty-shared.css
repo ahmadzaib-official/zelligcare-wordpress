@@ -49,14 +49,13 @@
     display: none;
 }
 
-/* Banner title positioning - title is sibling of ry-bnr-wrp */
+/* Banner title positioning */
 #ry-pg-banner .ry-pg-title {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    text-align: center;
     z-index: 10;
     visibility: visible;
     pointer-events: none;
@@ -70,7 +69,6 @@
     line-height: 1 !important;
     padding: 0 !important;
     margin: 0 !important;
-    text-transform: uppercase;
     max-width: 70%;
 }
 
@@ -86,14 +84,14 @@
 
 @media (max-width: 1599px) {
     #ry-pg-banner .ry-bnr-wrp {
-        height: 320px;
+        height: 400px;
         background-position: 100%;
     }
 }
 
 @media (max-width: 1380px) {
     #ry-pg-banner .ry-bnr-wrp {
-        height: 300px;
+        height: 400px;
         background-position: 95%;
     }
 }
@@ -104,6 +102,13 @@
         background-position: 100%;
         margin-top: 0;
     }
+
+    #ry-pg-banner .ry-bnr-wrp .ry-pg-title {
+        margin: 0;
+        padding: 30px 0;
+        overflow-wrap: break-word;
+        hyphens: manual;
+    }
 }
 
 @media (max-width: 991px) {
@@ -112,7 +117,7 @@
         margin-top: 50px;
         background-position: 95%;
     }
-    
+
     #ry-pg-banner .ry-pg-title h1 {
         text-align: center;
         font-size: calc(35px + 35 * ((100vw - 500px) / 940));
@@ -125,19 +130,19 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     #ry-pg-banner .ry-bnr-wrp {
-        height: 260px;
+        height: 320px;
         background-position: 95%;
     }
 }
 
 @media screen and (max-width: 500px) {
     #ry-pg-banner .ry-bnr-wrp {
-        height: 200px;
+        height: 275px;
         background-position: 90%;
     }
-    
+
     #ry-pg-banner .ry-pg-title h1 {
         font-size: 35px;
     }

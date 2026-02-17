@@ -45,11 +45,23 @@ if (!is_array($sections)) {
         <div class="col-xs-12 group-block">
             <?php
             if (!empty($sections)) :
-                foreach ($sections as $index => $section) :
-                    $aos_direction = ($index % 2 === 0) ? 'fade-left' : 'fade-right';
-                    $title = isset($section['title']) ? $section['title'] : '';
-                    $description = isset($section['description']) ? $section['description'] : '';
-                    $image = isset($section['image']) ? $section['image'] : '';
+                // Render sections in pairs (0+1, 2+3, 4+5) to match reference site layout.
+                // Each pair shares the image from the even-numbered section.
+                $total = count($sections);
+                for ($i = 0; $i < $total; $i += 2) :
+                    $block_index = $i / 2;
+                    $aos_direction = ($block_index % 2 === 0) ? 'fade-left' : 'fade-right';
+
+                    // Even section (has image)
+                    $section_a = $sections[$i];
+                    $title_a = isset($section_a['title']) ? $section_a['title'] : '';
+                    $desc_a = isset($section_a['description']) ? $section_a['description'] : '';
+                    $image = isset($section_a['image']) ? $section_a['image'] : '';
+
+                    // Odd section (paired content, may not exist)
+                    $section_b = isset($sections[$i + 1]) ? $sections[$i + 1] : null;
+                    $title_b = $section_b ? (isset($section_b['title']) ? $section_b['title'] : '') : '';
+                    $desc_b = $section_b ? (isset($section_b['description']) ? $section_b['description'] : '') : '';
             ?>
             <div class="col-xs-12 block" data-aos-duration="1500" data-aos="<?php echo esc_attr($aos_direction); ?>">
                 <div class="col-xs-12 ry-container">
@@ -58,7 +70,7 @@ if (!is_array($sections)) {
                             <div class="col-xs-12 wrapper">
                                 <div class="col-xs-12 photo">
                                     <?php if ($image) : ?>
-                                    <img src="<?php echo esc_url($image); ?>" loading="lazy" alt="<?php echo esc_attr($title); ?>" class="img-responsive">
+                                    <img src="<?php echo esc_url($image); ?>" loading="lazy" alt="<?php echo esc_attr($title_a); ?>" class="img-responsive">
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -66,11 +78,17 @@ if (!is_array($sections)) {
                         <div class="col-xs-12 col-lg-6 each each-text">
                             <div class="col-xs-12 wrapper">
                                 <div class="ry-text">
-                                    <?php if ($title) : ?>
-                                    <h3><?php echo esc_html($title); ?></h3>
+                                    <?php if ($title_a) : ?>
+                                    <h3><?php echo esc_html($title_a); ?></h3>
                                     <?php endif; ?>
-                                    <?php if ($description) : ?>
-                                    <?php echo wp_kses_post($description); ?>
+                                    <?php if ($desc_a) : ?>
+                                    <?php echo wp_kses_post($desc_a); ?>
+                                    <?php endif; ?>
+                                    <?php if ($title_b) : ?>
+                                    <h3><?php echo esc_html($title_b); ?></h3>
+                                    <?php endif; ?>
+                                    <?php if ($desc_b) : ?>
+                                    <?php echo wp_kses_post($desc_b); ?>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -79,7 +97,7 @@ if (!is_array($sections)) {
                 </div>
             </div>
             <?php
-                endforeach;
+                endfor;
             else :
                 // Fallback: show editor content if no sections defined
             ?>
@@ -100,16 +118,6 @@ if (!is_array($sections)) {
         </div>
     </div>
 
-    <!-- CTA: Request an Appointment -->
-    <div class="col-xs-12 module-cta custom specialty-cta" data-aos-duration="1500" data-aos="fade-up">
-        <div class="col-xs-12 ry-container" style="text-align: center; padding: 60px 0;">
-            <h2 style="color: #b08d57; margin-bottom: 15px;">Ready to Get Started?</h2>
-            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 16px; line-height: 1.6;">
-                Take the first step toward better mental health. Our team is here to provide compassionate, personalized care.
-            </p>
-            <a href="<?php echo esc_url(get_theme_mod('zelligcare_appointment_url', 'https://intakeq.com/new/zelligcare')); ?>" class="hero-cta-badge" target="_blank" title="Intake Form">REQUEST AN APPOINTMENT</a>
-        </div>
-    </div>
 </div>
 
 <?php get_footer(); ?>

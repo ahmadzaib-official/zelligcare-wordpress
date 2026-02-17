@@ -16,28 +16,9 @@ get_template_part('template-parts/page-banner');
             <div class="col-xs-12 ry-content ry-flex">
                 <div class="col-xs-12 col-md-12 col-lg-12 ">
                     <div class="col-xs-12 module-grid-basic">
-                        <?php
-                        // Get page content
-                        $page_content = '';
-                        if (have_posts()) :
-                            while (have_posts()) : the_post();
-                                $page_content = get_the_content();
-                            endwhile;
-                        endif;
-                        
-                        // Check if page has custom content sections
-                        $sections = get_post_meta(get_the_ID(), 'zelligcare_page_sections', true);
-                        ?>
-                        
-                        <?php if (!empty($page_content) && !empty(trim(strip_tags($page_content)))) : ?>
-                            <div data-aos-duration="1500" data-aos="fade-up" class="ry-headline" style="text-align: center; margin-bottom: 40px;">
-                                <?php echo apply_filters('the_content', $page_content); ?>
-                            </div>
-                        <?php else : ?>
-                            <div data-aos-duration="1500" data-aos="fade-up" class="ry-headline" style="text-align: center; margin-bottom: 40px;">
-                                <h2>Insurance We Accept:</h2>
-                            </div>
-                        <?php endif; ?>
+                        <div data-aos-duration="1500" data-aos="fade-up" class="ry-headline" style="text-align: center; margin-bottom: 40px;">
+                            <h2 class="insurance-title" style="text-align: center;">Insurance We Accept:</h2>
+                        </div>
                         
                         <div class="col-xs-12 ry-flex ry-payment-options-logos" data-aos-duration="1500" data-aos="fade-up">
                             <?php
@@ -72,36 +53,12 @@ get_template_part('template-parts/page-banner');
                         </div>
                     </div>
                     <div class="clearfix "></div>
-                    <?php
-                    // Display custom sections if set, otherwise show default Private Pay section
-                    if (!empty($sections) && is_array($sections)) {
-                        foreach ($sections as $section) {
-                            if (empty($section['title']) && empty($section['content'])) continue;
-                            ?>
-                            <div class="ry-text" data-aos-duration="1500" data-aos="fade-up">
-                                <section>
-                                    <?php if (!empty($section['title'])) : ?>
-                                    <h3 style="text-align: center;"><?php echo esc_html($section['title']); ?></h3>
-                                    <?php endif; ?>
-                                    <?php if (!empty($section['content'])) : ?>
-                                    <div style="text-align: center;"><?php echo wp_kses_post($section['content']); ?></div>
-                                    <?php endif; ?>
-                                </section>
-                            </div>
-                            <?php
-                        }
-                    } else {
-                        // Default Private Pay section
-                        ?>
-                        <div class="ry-text" data-aos-duration="1500" data-aos="fade-up">
-                            <section>
-                                <h3 style="text-align: center;">Private Pay</h3>
-                                <p style="text-align: center;">We understand that not all services are covered by insurance. That&rsquo;s why we proudly offer <strong>flexible private pay options</strong> to make your care accessible and affordable.</p>
-                            </section>
-                        </div>
-                        <?php
-                    }
-                    ?>
+                    <div class="ry-text" data-aos-duration="1500" data-aos="fade-up">
+                        <section>
+                            <h3 style="text-align: center;">Private Pay</h3>
+                            <p style="text-align: center;">We understand that not all services are covered by insurance. That&rsquo;s why we proudly offer <strong>flexible private pay options</strong> to make your care accessible and affordable.</p>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

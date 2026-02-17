@@ -16,7 +16,7 @@ function zelligcare_scripts() {
     wp_enqueue_style('google-fonts-jost', 'https://fonts.googleapis.com/css?family=Jost:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
     wp_enqueue_style('google-fonts-tenor', 'https://fonts.googleapis.com/css?family=Tenor+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
     wp_enqueue_style('google-fonts-jost-tenor-updated', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap');
-    wp_enqueue_style('slick-carousel', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+    wp_enqueue_style('slick-carousel', get_template_directory_uri() . '/css/slick.css');
     wp_enqueue_style('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
     
     wp_enqueue_style('google-fonts-fraunces', 'https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,100..900;1,100..900&display=swap');
@@ -43,7 +43,7 @@ function zelligcare_scripts() {
     wp_enqueue_style('homepage-appointment-style-1', get_template_directory_uri() . '/styles/homepage-appointment-style-1.css');
     wp_enqueue_style('footer-2', get_template_directory_uri() . '/styles/footer-2.css');
     wp_enqueue_style('updates-css', get_template_directory_uri() . '/styles/updates-css.css');
-    wp_enqueue_style('overrides', get_template_directory_uri() . '/styles/overrides.css', array(), '1.2');
+    wp_enqueue_style('overrides', get_template_directory_uri() . '/styles/overrides.css', array(), '2.1');
     // Load site-overrides.css last to ensure footer styles take precedence
     wp_enqueue_style('site-overrides', get_template_directory_uri() . '/css/site-overrides.css', array('overrides'), '1.2');
     wp_enqueue_style('mobile-header', get_template_directory_uri() . '/styles/mobile-header.css');
@@ -136,12 +136,12 @@ function zelligcare_scripts() {
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true);
     wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), '3.3.7', true);
-    wp_enqueue_script('tailwind', 'https://cdn.tailwindcss.com', array(), null, false);
+    // Tailwind CDN removed — its Preflight reset conflicts with Bootstrap 3 and custom styles
     wp_enqueue_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBhDrnT7O9YqoL7Yn3hF0Z1d2e3f4g5h6i7j8k9l0', array(), null, true);
     wp_enqueue_script('userway', 'https://cdn.userway.org/widget.js', array(), null, true);
     wp_add_inline_script('userway', 'var _userway_config = { position: 3, size: "small", account: "sSEkA4Kkqq" };');
     
-    wp_enqueue_script('slick-carousel', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '1.8.1', true);
+    wp_enqueue_script('slick-carousel', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.8.2', true);
     wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', true);
     wp_enqueue_script('touchswipe', get_template_directory_uri() . '/js/touchswipe.min.js', array('jquery'), null, true);
     wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.js', array('jquery'), null, true);
@@ -181,7 +181,7 @@ function zelligcare_scripts() {
     // Theme-specific scripts
     wp_enqueue_script('zelligcare-dependencies', get_template_directory_uri() . '/scripts/dependencies.js', array('jquery'), null, true);
     wp_enqueue_script('zelligcare-menu', get_template_directory_uri() . '/scripts/menu.js', array('jquery', 'zelligcare-dependencies'), null, true);
-    wp_enqueue_script('zelligcare-main', get_template_directory_uri() . '/scripts/main.js', array('jquery', 'zelligcare-dependencies', 'zelligcare-menu'), null, true);
+    wp_enqueue_script('zelligcare-main', get_template_directory_uri() . '/scripts/main.js', array('jquery', 'slick-carousel', 'zelligcare-dependencies', 'zelligcare-menu'), '1.5', true);
     wp_enqueue_script('zelligcare-slider-pro', get_template_directory_uri() . '/scripts/slider-pro.js', array('jquery'), null, true);
     wp_enqueue_script('zelligcare-masonry', get_template_directory_uri() . '/scripts/masonry.js', array('jquery'), null, true);
     wp_enqueue_script('zelligcare-brands', get_template_directory_uri() . '/scripts/brands.js', array('jquery'), null, true);
@@ -193,11 +193,25 @@ function zelligcare_scripts() {
     wp_enqueue_script('zelligcare-inner-team-style-1', get_template_directory_uri() . '/scripts/inner-team-style-1.js', array('jquery'), null, true);
     wp_enqueue_script('zelligcare-inner-team-style-3', get_template_directory_uri() . '/scripts/inner-team-style-3.js', array('jquery'), null, true);
     
-    // Initialize AOS
-    wp_add_inline_script('aos', 'AOS.init({
-        duration: 800,
-        once: true
-    });');
+    // Initialize AOS with proper settings
+    wp_add_inline_script('aos', '
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100,
+                easing: "ease-in-out",
+                delay: 100
+            });
+            
+            // Refresh AOS after dynamic content loads
+            if (typeof jQuery !== "undefined") {
+                jQuery(document).ajaxComplete(function() {
+                    AOS.refresh();
+                });
+            }
+        });
+    ');
     
     // Initialize sticky header - ensure it runs after main.js loads
     wp_add_inline_script('zelligcare-main', '

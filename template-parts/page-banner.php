@@ -8,8 +8,8 @@
 
 $banner_image = '';
 
-// 1. Featured Image (skip for team members — their featured image is a headshot, not a banner)
-if (has_post_thumbnail() && get_post_type() !== 'team_member') {
+// 1. Featured Image (skip for team members and posts — their featured image is not a banner)
+if (has_post_thumbnail() && !in_array(get_post_type(), array('team_member', 'post'))) {
     $banner_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
 }
 
