@@ -1,0 +1,250 @@
+body,
+body p,
+body div {
+	font-family: Jost !important;
+	font-weight: 400 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Jost, sans-serif !important;
+	font-weight: 600 !important;
+}
+
+/* Exclude specialty pages from global heading styles - let Elementor control them */
+#ry-pg-content h1,
+#ry-pg-content h2,
+#ry-pg-content h3,
+#ry-pg-content h4,
+#ry-pg-content h5,
+#ry-pg-content h6 {
+	font-family: inherit !important;
+	font-weight: inherit !important;
+}
+
+#ry-pg-body h2 {
+	font-weight: 600 !important;
+}
+
+@media screen and (min-width: 1440px) {
+	#ry-pg-body h2 {
+		font-weight: 600 !important;
+		text-align: center !important;
+		text-transform: uppercase !important;
+	}
+}
+
+b,
+strong {
+	font-weight: bold !important;
+}
+
+@media (max-width: 991px) {}
+
+@media only screen and (max-width: 768px) {
+	.swiper-slide {
+		width: 100% !important;
+	}
+
+	.testimonials-wrapper .testimonials-block .carousel-control {
+		display: none;
+	}
+
+	.carousel-control.left,
+	.carousel-control.right {
+		background-image: unset;
+		background-image: unset;
+		background-repeat: unset;
+	}
+
+	.carousel-control,
+	.carousel-control:hover,
+	.carousel-control:focus {
+		color: #FFFFFF;
+	}
+}
+
+#services-box a {
+	margin: 0 auto;
+}
+
+#articles .ry-btn-primary,
+#articles .ry-btn-primary:after {
+	color: #FFFFFF;
+}
+
+#articles .ry-btn-primary:hover,
+#articles .ry-btn-primary:hover:after {
+	color: #FFFFFF;
+}
+
+.ry-btn:after {
+	display: none;
+}
+
+.btn,
+.ry-btn,
+.ry-btn-primary,
+.ry-btn-secondary {
+	font-family: 'Jost';
+	z-index: 99;
+}
+
+.ry-btn {
+	text-transform: uppercase;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 25px;
+	padding-right: 25px;
+	max-width: max-content;
+	color: #FFFFFF !important;
+	background: #bd945a !important;
+	font-size: 20px !important;
+}
+
+.ry-btn-primary:hover {
+	background: #184f5a !important;
+	color: #FFFFFF !important;
+}
+
+.ry-btn.ry-btn-secondary {
+	color: #FFFFFF !important;
+	background: #184f5a !important;
+}
+
+.ry-btn.ry-btn-secondary:hover {
+	background: #bd945a !important;
+	color: #FFFFFF !important;
+	box-shadow: unset !important;
+}
+
+/*.cmsForm .has-error input {border: 1px solid #ff0069;}*/
+.btn,
+.ry-btn,
+.ry-btn-primary {
+	border-radius: 10px !important;
+	font-size: 18px !important
+}
+
+.btn-img {
+	z-index: 999;
+}
+
+.ry-anchor-hidden {
+	display: block;
+	position: relative;
+	top: -200px;
+	visibility: hidden;
+}
+
+.full-link,
+.full-link a {
+	position: absolute;
+	inset: 0;
+	color: transparent;
+}
+
+.full-link:hover a {
+	color: transparent;
+}
+
+#ry-pg-body .owl-carousel .owl-item img {
+	filter: unset;
+}
+
+.HOLDsp-slides-container {
+	height: calc(100vh - 120px) !important;
+}
+
+li.third-level-container:not(.third-level a):after {
+	content: '\f105';
+	font-family: fontawesome;
+	color: #fff;
+	position: relative;
+	top: 12px;
+	right: 12px;
+}
+
+.mt-20 {
+	margin-top: 20px;
+}
+
+.icon-bar a {
+	padding: 14px;
+}
+
+.icon-bar a img {
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+	transition: .2s;
+}
+
+@media (max-width: 1080px) {
+	.ry-list-wrp .ry-list-item .ry-list-photo img {
+		margin: auto;
+	}
+
+	.ry-list-wrp .ry-list-item .ry-box-right * {
+		text-align: center;
+	}
+
+	.ry-list-wrp .ry-list-item .ry-box-right .col-xs-12 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 30px;
+		margin-bottom: 20px;
+	}
+}
+
+/* INTERIOR PAGE SIDEBAR AND FULL WIDTH */
+body.default #ry-pg-body[data-interior-layout="Full Width"]>.ry-container>.ry-content>.ry-left {
+	width: 100%;
+	max-width: 100%;
+	float: unset;
+}
+
+body.default #ry-pg-body[data-interior-layout="Full Width"]>.ry-container>.ry-content>.ry-right {
+	display: none;
+}
+
+.title-open {
+	border-radius: 10px 10px 0 0 !important;
+}
+
+.title-closed {
+	border-radius: 10px !important;
+}
+
+.ry-btn.ry-btn-primary:not(:hover) {
+	background: linear-gradient(to right, #8c6f4f, #dab36e) !important;
+}
+
+.ry-btn.ry-btn-primary,
+.ry-btn.ry-btn-secondary {
+	border: none !important;
+}
+
+.module-43 .ry-right .ry-menu .nav-menu li a {
+	text-transform: uppercase;
+}
+
+.module-43:not(.fixed) .ry-right .ry-menu .nav-menu {
+	justify-content: end;
+}
+
+.module-welcome.custom .section-background {
+	height: 0;
+}
+
+.module-welcome.custom .right-leaf,
+div#about {
+	display: none;
+}
