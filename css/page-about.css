@@ -16,6 +16,7 @@
 #ry-pg-body {
     display: block;
     visibility: visible;
+    padding: 65px 0px 0px 0px !important;
 }
 
 #ry-pg-body .ry-content {
@@ -33,7 +34,7 @@
     visibility: visible;
 }
 
-#ry-pg-body .col-lg-12 > div {
+#ry-pg-body .col-lg-12>div {
     margin: 0 auto;
     padding: 0 20px;
     display: block !important;
@@ -43,73 +44,73 @@
     min-height: 100px;
 }
 
-#ry-pg-body .col-lg-12 > div p {
+#ry-pg-body .col-lg-12>div p {
     font-weight: 400;
     margin-bottom: 2rem;
 }
 
-#ry-pg-body .col-lg-12 > div h2,
-#ry-pg-body .col-lg-12 > div h3 {
+#ry-pg-body .col-lg-12>div h2,
+#ry-pg-body .col-lg-12>div h3 {
     color: #b08d57;
     font-family: 'Cinzel', serif;
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
-#ry-pg-body .col-lg-12 > div h2 {
+#ry-pg-body .col-lg-12>div h2 {
     font-size: 36px;
 }
 
-#ry-pg-body .col-lg-12 > div h3 {
+#ry-pg-body .col-lg-12>div h3 {
     font-size: 28px;
 }
 
-#ry-pg-body .col-lg-12 > div ul,
-#ry-pg-body .col-lg-12 > div ol {
+#ry-pg-body .col-lg-12>div ul,
+#ry-pg-body .col-lg-12>div ol {
     margin: 20px 0;
     padding-left: 30px;
 }
 
-#ry-pg-body .col-lg-12 > div li {
+#ry-pg-body .col-lg-12>div li {
     margin-bottom: 10px;
     line-height: 1.6;
 }
 
-#ry-pg-body .col-lg-12 > div a {
+#ry-pg-body .col-lg-12>div a {
     color: #b08d57;
     text-decoration: underline;
     transition: color 0.3s ease;
 }
 
-#ry-pg-body .col-lg-12 > div a:hover {
+#ry-pg-body .col-lg-12>div a:hover {
     color: #8a6d42;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    #ry-pg-body .col-lg-12 > div {
+    #ry-pg-body .col-lg-12>div {
         padding: 0 15px;
     }
-    
-    #ry-pg-body .col-lg-12 > div p {
+
+    #ry-pg-body .col-lg-12>div p {
         font-size: 18px;
     }
-    
-    #ry-pg-body .col-lg-12 > div h2 {
+
+    #ry-pg-body .col-lg-12>div h2 {
         font-size: 28px;
     }
-    
-    #ry-pg-body .col-lg-12 > div h3 {
+
+    #ry-pg-body .col-lg-12>div h3 {
         font-size: 24px;
     }
-    
+
     #ry-pg-content {
         padding: 0;
     }
 }
 
 @media (max-width: 480px) {
-    #ry-pg-body .col-lg-12 > div p {
+    #ry-pg-body .col-lg-12>div p {
         font-size: 16px;
     }
 }
