@@ -420,6 +420,33 @@ body.default #ry-section-header.module-43.fixed .ry-leads .btn-wrapper .btn-wrap
 	display: inline-block;
 }
 
+/* Hide phone text in sticky header, show only icon */
+#ry-section-header.fixed .btn-wrap.tel .ry-btn {
+	font-size: 0 !important;
+	padding: 16px 20px !important;
+	min-width: auto !important;
+	background-color: #bd945a !important;
+	border-radius: 12px !important;
+}
+
+#ry-section-header.fixed .btn-wrap.tel .ry-btn .fas {
+	font-size: 18px !important;
+	margin-right: 0 !important;
+}
+
+/* Mobile - always show full number */
+@media (max-width: 991px) {
+	#ry-section-header.fixed .btn-wrap.tel .ry-btn {
+		font-size: 16px !important;
+		padding: 16px 20px !important;
+		min-width: auto !important;
+	}
+
+	#ry-section-header.fixed .btn-wrap.tel .ry-btn .fas {
+		margin-right: 8px !important;
+	}
+}
+
 /* Sticky button styling handled by header-style-14.css (icon-only buttons matching reference) */
 
 /* Banner positioned relative to header container */

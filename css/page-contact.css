@@ -138,4 +138,13 @@
     .ry-form-box {
         padding: 20px;
     }
+
+    #ry-pg-body h2 {
+        font-size: 28px !important;
+        font-weight: 600 !important;
+    }
+
+    #ry-pg-body .ry-container {
+        max-width: 80% !important;
+    }
 }

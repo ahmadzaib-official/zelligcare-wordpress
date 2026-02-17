@@ -138,7 +138,7 @@
     max-width: 280px !important;
     min-width: 280px !important;
     /* Ensure consistent width for both buttons */
-    height: 340px !important;
+    height: 340px;
     flex-direction: column;
     gap: 1em 0;
     font-size: 25px !important;
@@ -237,5 +237,9 @@
     .button-wrapper .ry-btn {
         padding: 12px 25px;
         font-size: 16px;
+    }
+
+    .button-wrapper.good-button a.ry-btn.ry-btn-primary {
+        height: 280px !important;
     }
 }

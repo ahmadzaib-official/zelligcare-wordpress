@@ -29,7 +29,7 @@ get_template_part('template-parts/page-banner');
                                     } else {
                                         // Default heading
                                         echo '<div data-aos-duration="1500" data-aos="fade-up" class="ry-headline" style="margin-bottom: 40px;">';
-                                        echo '<h2>Get In Touch</h2>';
+                                        echo '<h2 class="contact-us-title">Get In Touch</h2>';
                                         echo '</div>';
                                     }
                                 endwhile;

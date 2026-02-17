@@ -82,4 +82,10 @@
     .ry-form {
         padding: 20px;
     }
+
+
+    .custom-form-v2 .form-wrapper {
+        width: 100%;
+        padding: 24px !important;
+    }
 }

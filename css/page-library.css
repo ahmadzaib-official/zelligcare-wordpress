@@ -143,18 +143,18 @@
         width: 100%;
         max-width: 100%;
     }
-    
+
     .library-template .ry-container .ry-flex .each.is-portrait,
     .library-template .ry-container .ry-flex .each.is-landscape {
         width: 100%;
         max-width: 100%;
     }
-    
+
     .library-template .ry-container .ry-flex .each .each-container {
         flex-direction: column !important;
         height: auto !important;
     }
-    
+
     .library-template .ry-container .ry-flex .each .each-container .ry-photo {
         width: 100% !important;
         max-width: 100% !important;
@@ -162,7 +162,7 @@
         padding-bottom: 56.25% !important;
         height: 100%;
     }
-    
+
     .library-template .ry-container .ry-flex .each .each-container .ry-photo img {
         position: absolute !important;
         top: 0;
@@ -170,29 +170,49 @@
         width: 100%;
         height: 100% !important;
     }
-    
+
     .library-template .ry-container .ry-flex .each .each-container .text {
         padding: 0;
         width: 100%;
         max-width: 100%;
     }
-    
+
     .library-template .ry-container .ry-flex .each.is-portrait .text {
         width: 100%;
         max-width: 100%;
     }
-    
+
     .library-template .ry-container .ry-flex .each.is-portrait h4,
     .library-template .ry-container .ry-flex .each.is-portrait p,
     .library-template .ry-container .ry-flex .each .each-container .text .post-art .date {
         text-align: center;
     }
-    
+
     .library-template .ry-container .ry-flex .each .each-container .text .button-wrapper {
         justify-content: center;
     }
-    
+
     .library-template .ry-container .ry-flex .each .each-container .text .ry-btn {
         margin: auto;
+    }
+
+}
+
+@media (max-width: 680px) {
+    #ry-pg-content .each .text .title h4 {
+        font-weight: 600 !important;
+        font-size: 18px !important;
+    }
+
+    .library-template .ry-container .ry-flex .each .each-container .text .title p {
+        font-size: 14px !important;
+    }
+
+    .library-template .ry-container .ry-flex .each .each-container .text .post-art .date {
+        margin: 16px;
+    }
+
+    .library-template .ry-container .ry-flex .each {
+        padding: 40px 24px;
     }
 }
